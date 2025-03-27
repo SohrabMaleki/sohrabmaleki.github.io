@@ -1,0 +1,503 @@
+\documentclass{article}
+
+
+
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bigints}
+\usepackage{bm}
+\usepackage{braket}
+\numberwithin{equation}{section}
+
+\newcommand\labelAndRemember[2]
+  {\expandafter\gdef\csname labeled:#1\endcsname{#2}%
+   \label{#1}#2}
+\newcommand\recallLabel[1]
+   {\csname labeled:#1\endcsname\tag{\ref{#1}}}
+
+\begin{document}
+
+\title{Analyzing Discreet Differences: Understanding the Unique Traits of Magnetic and Electric Dipoles}
+\author{Sohrab Maleki}
+\date{August, 2024}
+\maketitle
+
+\begin{abstract}
+ %Magnetization field $\vb{M}(\vb{r})$ is a vector field which is defined as dipole density $d\vb{m}/{dV}$ at point with position vector $\vb{r}$ which dV is the volume element of space. we use this concept to model magnetic matters behaviour in order to develop a powerful mathematical tool to describe the magnetic field $\vb{B}(\vb{r})$ in space in presence of magnetic matters.\\
+%Our approach aims to investigate and developing a method which deals with magnetization problems and we discuss subtle facts which have made magnetization different from polariation. The "Steady Fields Assumption" is always considered throughout this article
+Exploring classical electromagnetism, we discover surprising similarities between electric and magnetic fields, even in seemingly unrelated scenarios. However, a closer look reveals subtle yet significant differences. my study delves into these distinctions between electric and magnetic dipoles, demonstrating their contrasting behaviors. Specifically, we highlight how electric dipoles can imitate monopole behavior, unlike their magnetic counterparts. Throughout my analysis, we consistently adhere to the "Steady Fields Assumption".
+\end{abstract}
+
+\section{Conceptual Aspect of an Arbitrary Magnetization field}\label{subsec:ss1}
+In discussing an arbitrary magnetization field $\vb{M}(\vb{r})$ in space, the concept involves placing infinitesimal magnetic dipoles, each with a moment $\vb{\delta m}=\vb{M}(\vb{r})\delta V$, across all spatial points. At first glance, it appears unnecessary to impose constraints on this magnetization field, labeling some instances as "non-physical" or "physically impossible." To validate this viewpoint, we can assemble the magnetization using the earlier discussed method of placing these dipole volume elements. If arbitrary moment vectors are deemed "physical" or "physically possible," then constructing any desired distribution of dipoles, leading to any arbitrary magnetization field, should be feasible. Consequently, any well-behaved magnetization field can be physically realized without any specific conditions, apart from maintaining its expected behavior. Moreover, the absence of singularities within the magnetic matter volume, though not a necessity, fortifies our theory by mitigating potential mathematical intricacies.
+
+\section{A Brief Review on The Usual Approach to Electric and Magnetic Field in Matter}
+To delve into Magnetization and examine the essential nuances between electric and magnetic dipoles, we are conducting a review of our investigations into these fields within matter.
+\subsection{Electric Field in Matter}
+When subjected to an increasing electric field, a non-conductive macroscopic body experiences an initial repositioning of its electrons within their fundamental structures. This rearrangement significantly impacts the overall multipole expansion of the body. The multipole expansion for a finite stationary electric charge distribution, can be derived by applying Coulomb's law and Legendre polynomials for $1/|\vb{r}-\vb{r'}|$:
+%
+\begin{equation}
+    \phi=\sum_{l=0}^\infty \int_V \frac{\rho(\vb{r'})}{4\pi\epsilon_0 r}\left(\frac{r'}{r}\right)^l P_l(\cos\theta)\ \dd\tau'    \label{eqn:eq1}
+\end{equation}
+%
+For $|\vb{r}|\gg|\vb{r'}|$ the first term is called "monopole" which is
+%
+\begin{equation}
+    \phi_0=\frac{1}{4\pi\epsilon_0 r} \int_V \rho(\vb{r'})\ \dd\tau'    \label{eqn:eq2}
+\end{equation}
+%
+However, since electrons remain within the body and do not leave it, the total charge vanishes. Consequently, this term equates to zero. In cases where the body initially contains a charge, standard Laplace equation-solving methods can be employed for these charges. The second term in this expansion is referred to as the "dipole," which signifies...
+%
+\begin{equation}
+    \phi_1=\frac{1}{4\pi\epsilon_0 r^2} \int_V \rho(\vb{r'})r' \cos\theta \ \dd\tau'    \label{eqn:eq3}
+\end{equation}
+Which can be written as
+%
+\begin{gather}
+\phi_1=\frac{\vb{p}\vdot\vb{r}}{4\pi\epsilon_0 r^3}\:,\:\vb{p}\equiv\int_V \rho(\vb{r'})\vb{r'} \ \dd\tau'\label{eqn:eq4}
+\end{gather}
+%
+Which the defined parameter $\vb{p}$ is called "dipole moment".
+\par
+However, the subsequent terms ($l>1$) can be neglected only under the condition that we are far enough from the body ($\vb{r}\gg \vb{r'}$), but this approximation fails for points in close proximity to the body. To accurately determine the electric field near the body, these neglected terms beyond the dipole contribution must be retained. Nevertheless, this approach remains an approximation and proves insufficient for determining fields within the body. Given my interest in solving the field throughout the entire space, a more comprehensive approach is necessary.
+\par 
+We've presented the multipole expansion for the entire body. An alternative approach involves formulating the multipole expansion "locally"; specifically for local structures such as atoms or molecules. In this context, the approximation ($\vb{r}\gg \vb{r'}$) holds well even within the body due to the typical size of local structures, which usually ranges from $\sim 10^{-10}\,-\,10^{-6}\:\:m$. Given that electrons within non-conducting bodies reside within these local structures, the monopole term remains zero. Hence, my initial approximation for these materials involves local dipoles. Let's denote the dipole moment in a volume element $dV$ as $d\vb{p}=\vb{P}dV$. The dipole density or "polarization" $\vb{P}$ can be defined as:
+\begin{equation}
+    \vb{P}(\vb{r})\equiv \fdv{\vb{p}}{V}    \label{eqn:eq5}
+\end{equation}
+The definition of polarization enables us to decompose the body into numerous local dipoles. Integrating their potential allows us to derive the electric potential and consequently the electric field at any point in space. This process involves substituting $\vb{p}$ with $\vb{P}dV$ in \eqref{eqn:eq4}:
+%
+\begin{equation}
+    \phi=\int_V \frac{\vb{P}(\vb{r'})\vdot\vb{\mathcal{R}}}{4\pi\epsilon_0 \mathcal{R}^3} \ \dd\tau'\:,    \quad   \vb{\mathcal{R}}\equiv\vb{r}-\vb{r'}    \label{eqn:eq6}
+\end{equation}
+%
+Utilizing the mathematical expression
+\begin{equation}
+    \grad \frac{1}{\mathcal{R}}=\frac{\vb{\mathcal{R}}}{\mathcal{R}^3}\:,    \label{eqn:eq7}
+\end{equation}
+%
+we can reframe Eq. \eqref{eqn:eq6} as follows:
+%
+\begin{equation}
+    \phi=\int_V \frac{\vb{P}(\vb{r'})}{4\pi\epsilon_0} \vdot \grad\frac{1}{\mathcal{R}}    \label{eqn:eq8}
+\end{equation}
+%
+By applying the subsequent mathematical operations, we derive the following expression:
+%
+\begin{gather}
+    \phi=\frac{1}{4\pi\epsilon_0}\int_V \vb{P}(\vb{r'})\vdot\grad\frac{1}{\mathcal{R}}\ \dd\tau' \nonumber \\ \phi=\frac{1}{4\pi\epsilon_0} \bigintsss_V \left(\div(\frac{\vb{P}(\vb{r'})}{\mathcal{R}})-\frac{\div\vb{P}(\vb{r'})}{\mathcal{R}}\right)\ \dd\tau'\nonumber\\\phi=\oint_{\partial V} \frac{\vb{P}(\vb{r'})}{4\pi\epsilon_0 \mathcal{R}}\vdot \vb{da'} - \int_V \frac{\div\vb{P}}{4\pi\epsilon_0 \mathcal{R}} \ \dd\tau' \label{eqn:eq9}
+\end{gather}
+%
+We immediately notice the similarity between this equation and Coulomb's law
+%
+\begin{equation}
+    \phi=\oint_{\partial V} \frac{\sigma(\vb{r'})}{4\pi\epsilon_0 \mathcal{R}} da' + \int_V \frac{\rho(\vb{r'})}{4\pi\epsilon_0 \mathcal{R}} \ \dd\tau'\label{eqn:eq10}
+\end{equation}
+%
+The polarization behaves akin to surface charge density and volume charge density, referred to as "bound charge". they can be obtained by equivalence of \eqref{eqn:eq9} and \eqref{eqn:eq10} yielding:
+%
+\begin{equation}
+\label{eqn:eq11}
+\boxed{\rho_b=-\div\vb{P}(\vb{r})\quad \&\quad \sigma_b=\vb{P}(\vb{r})\vdot\vu{n}}
+\end{equation}
+%
+\par
+"As demonstrated, substituting the dielectric body with specific charges enables us to derive the potential and electric field using conventional methods for solving Poisson and Laplace equations."\cite{book:91141798}
+
+\subsection{Magnetic Field in Matter}
+
+In the case of the magnetic field, while the equations for the electric field involve $\div\vb{E}=\rho/\epsilon_0$ and $\vb{E}=0$, the magnetic field is described by $\div\vb{B}=0$ and $\curl\vb{B}=\mu_0\vb{J}$. Due to the divergence of the field being zero and focusing on its curl, we anticipate the existence of a vector potential $\vb{A}$ such that $\curl\vb{A}=\vb{B}$ which can be derived using Biot-Savart law and Eq. \eqref{eqn:eq7}
+%
+\begin{gather}
+    \vb{B}(\vb{r})=\frac{\mu_0}{4\pi} \int_V \frac {\vb{J}(\vb{r'})\times\vb{\mathcal{R}}} {\mathcal{R}^3} \ \dd\tau'\label{eqn:eq12}\\ \vb{B}(\vb{r})=-\frac{\mu_0}{4\pi} \int_V \vb{J}(\vb{r'})\times\grad\frac{1}{\mathcal{R}}\ \ \dd\tau' \nonumber \\ \vb{B}(\vb{r})=\frac{\mu_0}{4\pi} \int_V \curl\left( \frac{\vb{J}(\vb{r'})}{\mathcal{R}} \right) \ \dd\tau'=\curl\left(\frac{\mu_0}{4\pi} \int_V \frac{\vb{J}(\vb{r'})}{\mathcal{R}} \ \dd\tau'\right) \label{eqn:eq13}
+\end{gather}
+%
+In the last step we used the fact that $\grad$ is taken on $\vb{r}$ while $\vb{J}(\vb{r'})$ is depended on $\vb{r'}$. As we expected, we successfully represented $\vb{B}(\vb{r})$ as $\curl\vb{A}$ defining $\vb{A}$ as follows:
+%
+\begin{equation}
+\label{eqn:eq14}
+    \vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_V \frac {\vb{J}(\vb{r'})} {\mathcal{R}} \ \dd\tau'+\frac{\mu_0}{4\pi} \oint_{\partial V} \frac{\vb{dS'}\times\vb{K}(\vb{r'})}{\mathcal{R}}
+\end{equation}
+%
+The second term is added similarly to the second term in \eqref{eqn:eq10} for Coulomb's law, where $\vb{K}$ represents the surface current density.
+\par
+Using this "Vector Potential", we eliminate pseudo-vectors and cross products that arise when deriving the magnetic field through the Biot-Savart equation, much like how we removed vectors when defining the electric potential. Similar to what we derived for the electric field, my objective is to derive $\vb{A}$ for a magnetic dipole by forming a multipole expansion for $\vb{A}$ :
+%
+\begin{equation}
+\label{eqn:eq15}
+    \vb{A}(\vb{r})=\sum_{l=0}^\infty \frac{\mu_0}{4\pi} \int_V \frac{\vb{J}(\vb{r'})}{r} \left( \frac{r'}{r} \right)^l P_l(\cos\theta) \ \dd\tau'
+\end{equation}
+%
+the monopole term is
+%
+\begin{equation}
+\label{eqn:eq16}
+    \vb{A}_0(\vb{r}) =\frac{\mu_0}{4\pi r} \int_V \vb{J}(\vb{r'})\ \dd\tau'
+\end{equation}
+%
+Using Einstain summation convection, we obtain:
+%
+\begin{gather}
+    \frac{4\pi}{\mu_0} \vb{A}_0(\vb{r})\vdot \vu{e_k} = \int_V J_k(\vb{r'})\ \dd\tau'=\int_V J_i(\vb{r'}) \delta_{ik} \ \dd\tau'=\int_V J_i(\vb{r'}) \partial'_ir'_k \ \dd\tau'\nonumber \\ \int_V J_k(\vb{r'})\ \dd\tau'  = \int_V \left( \partial'_i(J_i r'_k) - r'_k \partial'_i J_i \right) \ \dd\tau' = \oint_{\partial V} r'_k J_i dS_i - \int_V r'_k \partial'_i J_i \ \dd\tau' \nonumber \\ \int_V \vb{J}(\vb{r'})\ \dd\tau'  = \oint_{\partial V} \vb{r'} \left( \vb{J}(\vb{r'}) \vdot \vb{dS} \right) - \int_V \vb{r'}\left( \grad'\vdot \vb{J}(\vb{r'}) \right) \ \dd\tau' \label{eqn:eq17}
+\end{gather}
+%
+The first and second terms are eliminated due to localization and stationarity assumptions, respectively.
+%
+\begin{equation}
+\label{eqn:eq18}
+    \vb{A}_0(\vb{r})=0
+\end{equation}
+%
+
+As we've demonstrated, the presence of a monopole term is impossible with steady localized current arrangements. Given the absence of a monopole term, it appears feasible to employ the method used for dielectric polarization to observe a similar phenomenon in magnetism. Let's derive the dipole term for $\vb{A}$  from Eq. \eqref{eqn:eq14}:
+%
+\begin{gather}
+	\vb{A}_1(\vb{r})=\frac{\mu_0}{4\pi r^2} \int_V \vb{J}(\vb{r'})r' \cos\theta \ \dd\tau'\nonumber\\\vb{A}_1(\vb{r})\vdot \vu{e_k}=\frac{\mu_0\vb{r}}{4\pi r^3}\vdot \int_V J_k \vb{r'} \ \dd\tau'=\frac{\mu_0}{4\pi r^3}\sum_j r_j\int_V J_k r'_j \ \dd\tau' \label{eqn:eq19}
+\end{gather}
+%
+The assumption of localized current states that:
+%
+\begin{gather}
+\int_V \div\left( f(\vb{r}) \vb{J}(\vb{r}) \right) \ \dd\tau=\oint_{\partial V} f(\vb{r})\vb{J}(\vb{r})\vdot\vb{dS}=0 \nonumber\\
+\int_V \left( f(\vb{r}) \div\vb{J}(\vb{r})+\vb{J}(\vb{r})\vdot\grad f(\vb{r}) \right) \ \dd\tau=0 \label{eqn:eq20}
+\end{gather}
+%
+Substituting $f(\vb{r})=r_i$ yields \eqref{eqn:eq18}. When we use $f(\vb{r})=r_j r_k$, conservation of charge for steady arrangements, expressed as $\div J = 0$, allows us to utilize \eqref{eqn:eq20}:
+%
+\begin{gather}
+\sum_i\int_V  J_i\partial_i(r_jr_k)  \ \dd\tau =\sum_i \int_V \left(J_ir_k\partial_ir_j+J_ir_j\partial_ir_k \right) \ \dd\tau = 0\nonumber\\ \sum_i \int_V \left( J_i r_k \delta_{ij} + J_i r_j \delta_{ik} \right) \ \dd\tau=\int_V \left( J_j r_k + J_k r_j \right) \ \dd\tau=0\nonumber\\ \int_V \left( J_jr_k-J_kr_j \right)\ \dd\tau=\int_V \left( J_jr_k+J_kr_j - 2J_kr_j\right)\ \dd\tau=-2\int_V J_k r_j \ \dd\tau\nonumber\\ \int_V J_kr_j\ \dd\tau=-\frac{1}{2}\int_V \left(J_jr_k-J_kr_j\right) \ \dd\tau=-\frac{1}{2}\int_V \left( \vb{r}\times\vb{J}\right)_k\epsilon_{ijk}\ \dd\tau \label{eqn:eq21}
+\end{gather}
+%
+The equation \eqref{eqn:eq21} holds for any arbitrary components $i,j$. Simplifying \eqref{eqn:eq19} using \eqref{eqn:eq21}\cite{book:925320}:
+%
+\begin{gather}
+\vb{A}_1(\vb{r})=\frac{\mu_0}{4\pi r^3}\sum_j -\frac{1}{2} r_j \int_V \left(\vb{r'}\times\vb{J}\right)_k\epsilon_{ijk} \ \dd\tau \nonumber\\\vb{A}_1(\vb{r})=\frac{\mu_0}{4\pi r^3}\left(-\frac{1}{2} \vb{r}\times \int_V \vb{r'}\times\vb{J}\ \dd\tau\right)\nonumber\\ \vb{A}_1(\vb{r})=\frac{\mu_0}{4\pi } \frac{\vb{m}\times\vb{r}}{r^3}\:,\:\vb{m}\equiv-\frac{1}{2}\int_V\vb{r'}\times\vb{J}(\vb{r'}) \ \dd\tau \label{eqn:eq22}
+\end{gather}
+%
+Where $\vb{m}$ is known as the "magnetic dipole moment", similar to $\vb{P}$ for electric potential. Taking the curl of both sides of \eqref{eqn:eq22} and comparing it to the $\grad\phi_1$ derived in \eqref{eqn:eq4}:
+%
+\begin{gather}
+\curl\vb{A}_1 = \vb{B}_1 (\vb{r}) = \frac{\mu_0}{4\pi} \left( \frac{3\left( \vb{m}\vdot\vu{r}\right)\vu{r}-\vb{m}}{r^3}\right)\label{eqn:eq23}\\-\grad\phi_1=\vb{E_1}(\vb{r})=\frac{1}{4\pi\epsilon_0} \left( \frac{3(\vb{p}\vdot\vu{r})\vu{r}-\vb{p}}{r^3}\right)\nonumber
+\end{gather}
+%
+It's clear that $\vb{E}_1$ and $\vb{B}_1$ behave identically throughout space. Building on our understanding from dielectrics, let's explore magnetism within matter by defining "Magnetization" as the density of magnetic dipoles moment:
+%
+\begin{equation}
+\label{eqn:eq24}
+\vb{M}(\vb{r})=\fdv{\vb{m}}{V}
+\end{equation}
+%
+Using this definition, we derive equivalent of \eqref{eqn:eq10} for magnetization:
+
+%
+\begin{gather}
+\vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_V \vb{M}(\vb{r'})\times\grad\left(\frac{1}{\mathcal{R}}\right)\ \dd\tau'\nonumber\\\vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_V \left( \frac{\grad \times \vb{M}(\vb{r'})}{\mathcal{R}} - \curl\left( \frac{\vb{M}(\vb{r'})}{\mathcal{R}}\right)\right)\ \dd\tau'\nonumber\\ \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int_V\frac{\grad \times \vb{M}(\vb{r'})}{\mathcal{R}}\ \dd\tau'-\frac{\mu_0}{4\pi} \oint_{\partial V} \frac{\vb{M}(\vb{r'})}{\mathcal{R}} dS'\label{eqn:eq25}
+\end{gather}
+%
+And equivalent of \eqref{eqn:eq11} according to \eqref{eqn:eq14}:
+%
+\begin{equation}
+\boxed{\vb{J}_b(\vb{r})=\curl\vb{M}(\vb{r})\quad\&\quad\vb{K}_b(\vb{r})=\vb{M}(\vb{r})\times\vu{n}}\label{eqn:eq26}
+\end{equation}
+%
+\par
+Using this approach, we're able to use my previous methods of Poisson equation solving in order to solve electric and magnetic fields inside matter utilizing some effective currents and charges (bound charge and bound current) stemming from polarization and magnetization, respectively.
+\subsection{Displacement and H Vectors}
+Going further through steady electromagnetism theory inside matter, we derive maxwell equations in steady form for arbitrary media:
+%
+\begin{gather}
+\div\vb{E}=\frac{\rho_{tot}}{\epsilon_0}=\frac{\rho_b+\rho_f}{\epsilon_0}=\frac{\rho_f}{\epsilon_0}-\frac{\div\vb{P}}{\epsilon_0}\nonumber\\ \div\vb{D} = \rho_f\:,\:\vb{D}\equiv\vb{P}+\epsilon_0 \vb{E}\label{eqn:eq27}
+\end{gather}
+%
+Here, we've defined free charge density $\rho_f$ which is the real electric charge. in other words, $\vb{D}$ serves as an alternative to $\vb{E}$ but discounting the impact of bound charges.
+\par
+There is a similar parameter for magnetism:
+%
+\begin{gather}
+\curl\vb{B}=\mu_0\vb{J}_{tot}=\mu_0\left(\vb{J}_f+\vb{J}_b\right)=\mu_0\vb{J}_f+\mu_0\curl\vb{M}\nonumber\\\curl\vb{H}=\vb{J}_f\:,\:\vb{H}\equiv\frac{\vb{B}}{\mu_0}-\vb{M}\label{eqn:eq28}
+\end{gather}
+%
+\par
+By employing these definitions, we achieve:
+%
+\begin{gather}
+\labelAndRemember{eqn:eq29}{\div\vb{H}=-\div\vb{M}}\\
+\curl\vb{D}=\curl\vb{P}\label{eqn:eq30}
+\end{gather}
+%
+\section{Magnetic Field Produced by Time-dependent Polarization}
+
+The conservation law of electric charge states that
+$$\frac{\partial\rho}{\partial t}+\div\vb{J}=0$$
+substituting it by first Maxwell's equation (Gauss's law), we obtain:
+$$\div\left(\frac{\partial\vb{D}}{\partial t}+\vb{J}\right)=0$$
+Incorporating this expression into \text{Amp\`ere}'s equation preserves charge conservation without affecting the static regime equations:
+$$\curl\vb{H}=\vb{J}+\frac{\partial\vb{D}}{\partial t}$$
+It is the modified \text{Amp\`ere}'s equation, known as the \text{Amp\`ere}-Maxwell equation which has been validated by experimental evidence. Substituting $\vb{B}=\mu_0(\vb{H}+\vb{M})$ and $\vb{D}=\epsilon_0\vb{E}+\vb{P}$ in this equation gives \cite{book:925320}\cite{book:93780889}\cite{book:97549904}:
+$$\curl\vb{B}=\mu_0\left(\vb{J}+\curl\vb{M}+\frac{\partial\vb{P}}{\partial t}\right)+\mu_0\epsilon_0\frac{\partial\vb{E}}{\partial t}$$
+
+
+
+\section{A Contradiction}
+In this instance, we encounter a contradiction implying $\div\vb{B}\neq0$, conflicting with established electromagnetism principles and Maxwell's equations. my aim is to scrutinize this contradiction, emphasizing nuances to demonstrate how diligent attention to detail resolves any apparent inconsistencies. my primary focus revolves around understanding how a diverging polarization induces monopole behavior, whereas diverging magnetization fails to produce a similar effect.
+\subsection{The Idea}
+Results \eqref{eqn:eq29} and \eqref{eqn:eq30} approve the validity of $\div\vb{B}=0$ and $\curl\vb{E}=0$ within steady fields, regardless of polarization and magnetization.However, despite their similarities, my methodologies for studying $\vb{B}$ and $\vb{E}$ inside matter took distinct paths. This disparity originates from my focus on investigating field potentials rather than the vector fields themselves. What if our derivation of the magnetic field involved integrating over a magnetic dipole field while seeking a polarization-like theory for magnetization?
+\par
+We perform integration over $\vb{B}_1$ according to \eqref{eqn:eq23}, substituting $\vb{m}$ with $\vb{M}(\vb{r'})\ \dd\tau'$:
+\begin{gather}
+\vb{B}(\vb{r})=\bigintsss_V \frac{\mu_0}{4\pi}\left( \frac{3\left(\vb{M}(\vb{r'})\vdot\vu{\mathcal{R}}\right)\vu{\mathcal{R}}-\vb{M}(\vb{r'})}{\mathcal{R}^3}\right)\ \dd\tau'\nonumber\\\vb{B}(\vb{r})=-\grad\bigintsss_V\frac{\mu_0}{4\pi}\: \frac{\vb{M}(\vb{r'})\vdot\vb{\mathcal{R}}}{\mathcal{R}^3} \ \dd\tau'=-\grad\int_V \frac{\mu_0 \vb{M}(\vb{r'})}{4\pi}\vdot\grad'\left(\frac{1}{\mathcal{R}}\right)\ \dd\tau'\nonumber\\\vb{B}(\vb{r})=-\grad\bigintsss_V\left( \grad'\vdot\left(\frac{\mu_0\vb{M}(\vb{r'})}{4\pi \mathcal{R}}\right)-\frac{\mu_0 \grad'\vdot\vb{M}(\vb{r'})}{4\pi\mathcal{R}}\right)\ \dd\tau'\nonumber\\\vb{B}(\vb{r})=-\grad\left(\oint_{\partial V} \frac{\mu_0 \vb{M}(\vb{r'})}{4\pi\mathcal{R}} \vdot\vb{dS'}-\int_V \frac{\mu_0\grad'\vdot\vb{M}(\vb{r'})}{4\pi\mathcal{R}}\ \dd\tau' \right)\label{eqn:eq31}
+\end{gather}
+In this context, the operation of $\grad$ pertains to the components of $\vb{r}$ rather than those of $\vb{r'}$. Consequently, when taking the divergence of $\vb{B}(\vb{r})$:
+\begin{gather}
+\div\vb{B}(\vb{r})=\int_V \frac{\mu_0 \grad'\vdot\vb{M}(\vb{r'})}{4\pi}\grad^2\left(\frac{1}{\mathcal{R}}\right)\ \dd\tau' - \oint_{\partial V} \frac{\mu_0 }{4\pi}\grad^2\left(\frac{1}{\mathcal{R}}\right)\vb{M}(\vb{r'})\vdot\vb{dS'}\nonumber\\\div\vb{B}(\vb{r})=\oint_{\partial V} \mu_0 \delta(\vb{\mathcal{R}}) \vb{M}(\vb{r'})\vdot\vb{dS'}-\int_V \mu_0 \grad'\vdot\vb{M}(\vb{r'}) \delta(\vb{\mathcal{R}}) \ \dd\tau'\label{eqn:eq32}
+\end{gather}
+In the last step, we have used $\grad^2(1/\mathcal{R})=-4\pi\delta^3(\vb{\mathcal{R}})$. my focus lies on evaluating $\div\vb{B}$ within the material. To accomplish this, we position $\vb{r}$ inside the substance, causing the first term to vanish due to $\delta^3(\vb{\mathcal{R}})=0$ for all points along the surface ($\vb{\mathcal{R}}$ always possesses a positive length for $\vb{r}$ within and $\vb{r'}$ on the boundary of the material). Simplifying the recent outcome:
+\begin{gather}
+\boxed{\div\vb{B}(\vb{r})=-\mu_0\div\vb{M}(\vb{r})}\label{eqn:eq33}
+\end{gather}
+Which is a complete contradiction with my discussion on arbitrary magnetization field in section \ref{subsec:ss1}. The discrepancy emerges when we apply Maxwell's equations and establish a condition regarding $\vb{M}$:
+\begin{gather}
+\div\vb{B}=0\bm{\Rightarrow}\div\vb{M}=0\label{eqn:eq34}
+\end{gather}
+
+
+
+\subsection{First Attempt}
+To address the contradiction that surfaced, my focus shifts to the magnetic field on a single dipole itself, which, naturally, tends towards infinity. However, we introduce a corrective term, $\vb{\alpha}(\vb{m})\delta(\vb{r})$, carefully adjusted to nullify the problematic term in \eqref{eqn:eq33} and consequently resolve the contradiction. Now, let's reconsider the expression for the magnetic field of a single dipole:
+\begin{gather}
+\vb{B}(\vb{r})=\frac{\mu_0}{4\pi} \left( \frac{3\left( \vb{m}\vdot\vu{r}\right)\vu{r}-\vb{m}}{r^3}+\vb{\alpha}(\vb{m})\delta^3(\vb{r})\right)\label{eqn:eq35}
+\end{gather}
+Through the operations performed to derive \eqref{eqn:eq32} for this modified field, we obtain:
+\begin{multline}
+\div\vb{B}(\vb{r})=\oint_{\partial V} \mu_0 \delta^3(\vb{\mathcal{R}}) \vb{M}(\vb{r'})\vdot\vb{dS'}-\int_V \mu_0 \grad'\vdot\vb{M}(\vb{r'}) \delta^3(\vb{\mathcal{R}}) \ \dd\tau'\\+\frac{\mu_0}{4\pi}\div\int_V\vb{\alpha}(\vb{r'})\delta^3(\vb{\mathcal{R}})\ \dd\tau'\nonumber
+\end{multline}
+\begin{multline}
+\div\vb{B}(\vb{r})=\oint_{\partial V} \mu_0 \delta^3(\vb{\mathcal{R}}) \vb{M}(\vb{r'})\vdot\vb{dS'}-\int_V \mu_0 \grad'\vdot\vb{M}(\vb{r'}) \delta^3(\vb{\mathcal{R}}) \ \dd\tau'\\+\frac{\mu_0}{4\pi}\div\vb{\alpha}(\vb{r})\nonumber
+\end{multline}
+\begin{gather}
+\div\vb{B}(\vb{r})=-\mu_0\div\vb{M}(\vb{r}) + \frac{\mu_0}{4\pi}\div\vb{\alpha}(\vb{r})\label{eqn:eq36}
+\end{gather}
+Now, by selecting $\vb{\alpha}(\vb{r})=4\pi\vb{M}(\vb{r})$, we resolve the contradiction and maintain $\div\vb{B}=0$. Thus, the modified magnetic field of a single dipole is given by:
+\begin{gather}
+\vb{B}(\vb{r})=\frac{\mu_0}{4\pi} \left( \frac{3\left( \vb{m}\vdot\vu{r}\right)\vu{r}-\vb{m}}{r^3}+4\pi\vb{m}\delta^3(\vb{r})\right)\label{eqn:eq37}
+\end{gather}
+By incorporating this adjusted field, we have ensured $\div\vb{B}=0$. Implementing this modification up to \eqref{eqn:eq31} and utilizing the definition of $\vb{H}$ in \eqref{eqn:eq28}, we obtain:
+\begin{gather}
+\vb{B}(\vb{r})=-\grad\left(\oint_{\partial V} \frac{\mu_0 \vb{M}(\vb{r'})}{4\pi\mathcal{R}} \vdot\vb{dS'}-\int_V \frac{\mu_0\grad'\vdot\vb{M}(\vb{r'})}{4\pi\mathcal{R}}\ \dd\tau' \right)+\mu_0\vb{M}(\vb{r})\nonumber\\\vb{H}(\vb{r})=-\grad\left(\oint_{\partial V} \frac{\vb{M}(\vb{r'})}{4\pi\mathcal{R}} \vdot\vb{dS'}-\int_V \frac{\grad'\vdot\vb{M}(\vb{r'})}{4\pi\mathcal{R}}\ \dd\tau' \right)\label{eqn:eq38}
+\end{gather}
+Taking the divergence of both sides, akin to \eqref{eqn:eq33}, we arrive at a similar result for $\vb{H}$, which is precisely the equation \eqref{eqn:eq29}:
+\begin{equation*}
+\recallLabel{eqn:eq29}
+\end{equation*}
+\subsection{Electric Field Case}
+One might inquire about the outcome if we apply a similar approach to an electric dipole.
+\begin{align}
+\vb{E}(\vb{r}) &=\bigintsss_V \frac{1}{4\pi\epsilon_0}\left( \frac{3\left(\vb{P}(\vb{r'})\vdot\vu{\mathcal{R}}\right)\vu{\mathcal{R}}-\vb{P}(\vb{r'})}{\mathcal{R}^3}\right)\ \dd\tau'\nonumber\\ &=\curl\int_V \frac{1}{4\pi\epsilon_0}  \frac{\vb{P}(\vb{r'})\times\vb{\mathcal{R}}}{\mathcal{R}^3}\ \dd\tau'=\curl\int_V \frac{1}{4\pi\epsilon_0} \vb{P}(\vb{r'})\times\grad'\left( \frac{1}{\mathcal{R}}\right)\ \dd\tau' \nonumber\\&=\frac{1}{4\pi\epsilon} \curl\left[ \int_V \grad'\times\left(\frac{\vb{P}(\vb{r'})}{\mathcal{R}}\right)\ \dd\tau' - \int_V \frac{\grad'\times\vb{P}(\vb{r'})}{\mathcal{R}}\ \dd\tau' \right]\nonumber\\&=\frac{1}{4\pi\epsilon_0} \curl\left[ \oint_{\partial V}\frac{\vb{P}(\vb{r'})\times\vb{dS'}}{\mathcal{R}} - \int_V \frac{\grad'\times\vb{P}(\vb{r'})}{\mathcal{R}}\ \dd\tau' \right]\nonumber\\&=\frac{1}{4\pi\epsilon_0} \curl \int_V \frac{\grad'\times\vb{P}(\vb{r'})}{\mathcal{R}} \ \dd\tau'=\frac{1}{4\pi\epsilon_0} \int_V \left(\grad'\times\vb{P}(\vb{r'})\right)\times\grad\frac{1}{\mathcal{R}}\ \dd\tau'\nonumber\\\curl\vb{E}(\vb{r})&=\frac{1}{4\pi\epsilon_0}\int_V \left[\left(\grad'\times\vb{P}(\vb{r'})\right)\left( \grad^2 \frac{1}{\mathcal{R}}\right) - \left(\grad'\times\vb{P}(\vb{r'})\vdot \grad \right) \grad\frac{1}{\mathcal{R}}\right]\nonumber\\&=-\frac{1}{4\pi\epsilon_0} \int_V \left(\grad'\times\vb{P}(\vb{r'})\right) 4\pi\delta^3(\vb{\mathcal{R}})\ \dd\tau'\nonumber
+\end{align}
+\begin{equation}
+\label{eqn:eq39}
+\boxed{\curl\vb{E}(\vb{r})=-\frac{\curl\vb{P}(\vb{r})}{\epsilon_0}}
+\end{equation}
+Which also leads to a contradiction similar to the magnetism case. my attempt to address this issue results in:
+\begin{gather}
+\vb{E}(\vb{r})=\bigintsss_V \frac{1}{4\pi\epsilon_0}\left( \frac{3\left(\vb{P}(\vb{r'})\vdot\vu{\mathcal{R}}\right)\vu{\mathcal{R}}-\vb{P}(\vb{r'})}{\mathcal{R}^3}+\vb{\beta}(\vb{r'})\delta^3(\vb{\mathcal{R}})\right)\ \dd\tau'\nonumber\\\curl\vb{E}(\vb{r})=-\frac{\curl\vb{P}(\vb{r})}{\epsilon_0}+\frac{1}{4\pi\epsilon_0}\curl\vb{\beta}(\vb{r})\nonumber\\\vb{\beta}(\vb{r})=4\pi\vb{P}\label{eqn:eq40}
+\end{gather}
+This term is similar to what we derived for the magnetic dipole.
+
+
+\subsection{Understanding Incompleteness: The Path to Comprehensive Solution}
+
+
+It appears that the vector field 
+\begin{equation}
+\label{eqn:eq41}
+\vb{v}(\vb{r})=\left\{ \begin{array}{c}\frac{3\left( \vb{X}\vdot\vu{r}\right) \vu{r}-\vb{X}}{4\pi r^3},\;\;r>0\\\\\vb{X}\delta^3(\vb{r})\;\;\;\;\;\;\;\;r=0
+\end{array}\right.
+\end{equation}
+where $\vb{X}$ is a constant vector, is both divergence-free and curl-free throughout the entire space. Let's examine the Dirac delta term by integrating $\vb{v}(\vb{r})$ over the entire space. Utilizing identity \eqref{eqn:eq17} for $\vb{v}$ instead of $\vb{J}$:
+\begin{gather}
+\int_V \vb{v}(\vb{r}) \ \dd\tau=\int_{\partial V} \vb{r}\left( \vb{v}\vdot\vb{dS}\right)-\int_V\vb{r}\;\div\vb{v}\;\ \dd\tau\nonumber
+\end{gather}
+As we extend $V$ to infinity, we have the flexibility to shape it as needed. Here, we consider $V$ as a sphere with a radius of $R$ centered at the origin. Examining the first term in spherical coordinates, the Dirac delta vanishes as $\vb{r}$ is always non-zero:
+\begin{gather}
+\vb{v}(\vb{r})=\frac{|\vb{X}|} {4\pi r^3}\left( 2\cos\theta \; \vu{r}+\sin\theta\;\vu{\theta}\right)\nonumber\\\int_{\partial V} \vb{r}\left(\vb{v}\vdot\vb{dS}\right)=\int_{\partial V}\vb{r} \; \frac{|\vb{X}|}{2\pi r^3}\cos\theta \;r^2 \sin\theta \;d\theta \;d\phi\nonumber
+\end{gather}
+Utilizing cylindrical symmetry around the $\vb{X}$ axis, we obtain:
+\begin{align}
+\int_{\partial V} \vb{r}\left(\vb{v}\vdot\vb{dS}\right)&=\int_{\partial V} r\cos\theta\; \frac{\vb{X}}{2\pi r^3}\cos\theta\;r^2\sin\theta \;d\theta \;d\phi\nonumber\\&=\int_{\partial V} \frac{\vb{X}}{2\pi}\cos^2\theta\sin\theta \;d\theta\; d\phi\nonumber\\&=\vb{X}\int_0^\pi\cos^2\theta\sin\theta\;d\theta\nonumber
+\end{align}
+\begin{equation}
+\label{eqn:eq42}
+\int_{\partial V} \vb{r}\left(\vb{v}\vdot\vb{dS}\right)=\frac{2}{3}\vb{X}
+\end{equation}
+This holds true for both magnetic and electric dipoles ($\vb{X}=\vb{p}/\epsilon_0$ for electric and $\vb{X}=\mu_0 \vb{m}$ for magnetic dipole). However, upon closer examination of the second term, we observe a distinction:
+\begin{gather}
+\int_V \vb{r}\;\div\vb{E}\;\ \dd\tau=\frac{1}{\epsilon_0} \int_V \vb{r}\;\rho(\vb{r})\; \ \dd\tau=\frac{\vb{P}}{\epsilon_0}\nonumber\\\int_V \vb{r}\;\div\vb{B}\;\ \dd\tau=0\nonumber
+\end{gather}
+We've derived
+\begin{gather}
+\int_{space} \vb{E} \ \dd\tau = -\frac{1}{3} \frac{\vb{p}}{\epsilon_0}\label{eqn:eq45}\\\int_{space} \vb{B} \ \dd\tau = \frac{2}{3} \mu_0\vb{m}\label{eqn:eq46}
+\end{gather}
+Let's derive them from fields we've made for electric and magnetic dipoles.
+\begin{align}
+\int_V \vb{v}(\vb{r}) \ \dd\tau&=\int_V\left[\frac{3\left( \vb{X}\vdot\vu{r}\right) \vu{r}-\vb{X}}{4\pi r^3}+\vb{X}\delta^3(\vb{r})\right] \ \dd\tau\nonumber\\&=\int_V \frac{|\vb{X}|}{4\pi} \left( \frac{2\cos\theta\;\vu{r}+\sin\theta\;\vu{\theta}}{r^3}\right) \ \dd\tau+\vb{X}\nonumber\\&=\vb{X}+\int_{r\rightarrow0^+}^R\int_{\theta=0}^\pi \frac{|\vb{X}|}{2r^3}\left(3\cos^2\theta-1\right)r^2 \sin\theta\;d\theta\;dr\nonumber\\&=\vb{X}\nonumber
+\end{align}
+This equation implies that
+\begin{gather}
+\int_{space} \vb{E} \ \dd\tau = \frac{\vb{p}}{\epsilon_0}\label{eqn:eq48}\\\int_{space} \vb{B} \ \dd\tau = \mu_0\vb{m}\label{eqn:eq49}
+\end{gather}
+This presents a clear contradiction with \eqref{eqn:eq45} and \eqref{eqn:eq46}. So, what is the underlying problem, and how can we obtain a flawless solution?
+
+\subsection{A Precise Resolution: Unveiling Mathematical Details Addressing Paradoxes}
+The use of potentials, $\phi$ for the electric field and $\vb{A}$ for the magnetic field, becomes advantageous when taking derivatives to derive the respective fields. While working with the electric potential $\phi, \grad \times \vb{E} = 0$ is automatically satisfied without the need for additional precautions in my calculations. Similarly, when dealing with $\vb{A}$, the condition $\grad \vdot \vb{B} = 0$ is inherently maintained. This is why we encountered no issues while developing the electromagnetism theory inside matter using potentials.
+\par
+However, when directly dealing with fields, it becomes crucial to be mindful of fields Dirac delta functions in my calculations. To address this, we've devised a method. Consider the case of taking the derivative of a function, $f(x),$ where Dirac delta terms are significant. We first identify the part of $f$ that may lead to a Dirac delta term. Then, by introducing a variable and avoiding this possibility, we examine the limit of the result as this variable approaches zero. To illustrate this method, let's apply it to finding the gradient of the electric dipole scalar potential:
+\begin{gather}
+\phi=\frac{\vb{X}\vdot\vb{r}}{4\pi r^3}\nonumber\\-\grad\phi=\lim_{\Delta\rightarrow0}\left[\grad \frac{\vb{X}\vdot\vb{r}}{4\pi (r^2+\Delta)^\frac{3}{2}}\right]=\frac{1}{4\pi}\lim_{\Delta\rightarrow0}\left[ \frac{3(\vb{X}\vdot\vb{r})\vb{r}-r^2\vb{X}}{(r^2+\Delta)^\frac{5}{2}}-\frac{\vb{X}\Delta}{(r^2+\Delta)^\frac{5}{2}} \right]\nonumber\\-\grad\phi=\frac{1}{4\pi}\lim_{\Delta\rightarrow0}\left[ \frac{3(\vb{X}\vdot\vb{r})\vb{r}-r^2\vb{X}}{(r^2+\Delta)^\frac{5}{2}}\right]-\frac{1}{4\pi}\lim_{\Delta\rightarrow0}\left[\frac{\vb{X}\Delta}{(r^2+\Delta)^\frac{5}{2}} \right]\nonumber
+\end{gather}
+Where the second term can be expressed as a Dirac delta function (this can be verified through integration and the axioms of Dirac delta) as:
+\begin{equation}
+\delta^3(\vb{r})=\lim_{\varepsilon\rightarrow0}\left[ \frac{3\varepsilon}{4\pi(r^2+\varepsilon)^\frac{5}{2}}\right]\nonumber
+\end{equation}
+Utilizing this identity, we obtain the \textbf{Curl-Free Dipole Field}:
+\begin{equation}
+-\grad\left(\frac{\vb{X}\vdot\vu{r}}{4\pi r^2}\right)=\frac{3(\vb{X}\vdot\vu{r})\vu{r}-\vb{X}}{r^3}-\frac{1}{3}\vb{X}\delta^3(\vb{r})\label{eqn:eq50}
+\end{equation}
+Applying the same method to the vector potential of a magnetic dipole, we obtain the \textbf{Divergence-Free Dipole Field}:
+\begin{equation}
+\curl\left(\frac{\vb{X}\times\vu{r}}{4\pi r^2}\right)=\frac{3(\vb{X}\vdot\vu{r})\vu{r}-\vb{X}}{r^3}+\frac{2}{3}\vb{X}\delta^3(\vb{r})\label{eqn:eq51}
+\end{equation}
+Finally, we've obtained a comprehensive solution for the electric and magnetic dipole fields:
+\begin{gather}
+\boxed{\vb{E}_1(\vb{r})=\frac{1}{4\pi\epsilon_0}\frac{3(\vb{p}\vdot\vu{r})\vu{r}-\vb{p}}{r^3}-\frac{1}{3}\frac{\vb{p}}{\epsilon_0} \delta^3(\vb{r})}\label{eqn:eq52}\\\boxed{\vb{B}_1(\vb{r})=\frac{\mu_0}{4\pi}\frac{3(\vb{m}\vdot\vu{r})\vu{r}-\vb{m}}{r^3}+\frac{2}{3}\mu_0 \vb{m} \delta^3(\vb{r})}\label{eqn:eq53}
+\end{gather}
+\section{A Problem with a Familiar Answer}
+\begin{itemize}
+\item Consider a spherical medium uniformly polarized by a constant polarization vector $\vb{P}$. Determine the electric field at the center of this polarized sphere.
+\item We determine the bound charges and integrate over them:
+\begin{gather}
+\sigma_b=\vb{P}\vdot\vu{n}=|\vb{P}|\cos\theta\nonumber\\\vb{E}=-\vu{P}\int\frac{P\cos\theta R\cos\theta}{4\pi\epsilon_0 R^3}R^2\sin\theta\;d\theta \;d\phi=-\vu{P}\int_0^\pi\frac{P}{2\epsilon_0}\cos^2\theta\sin\theta\;d\theta\nonumber\\\vb{E}=-\frac{1}{3}\frac{\vb{P}}{\epsilon_0}\label{eqn:eq54}
+\end{gather}
+\end{itemize}
+There is also a similar problem in magnetism as well.
+\begin{itemize}
+\item Consider a spherical medium uniformly magnetized by a constant magnetization vector $\vb{M}$. Determine the magnetic field at the center of this magnetized sphere.
+\item We can utilize the last solution for magnetism but there is another simpler method with the same result. We take advantage of similarities:
+\begin{gather}
+\vb{H}=-\frac{1}{3}\vb{M}\nonumber\\\vb{B}=\mu_0\left(\vb{M}+\vb{H}\right)\nonumber\\\vb{B}=\frac{2}{3}\mu_0\vb{M}\label{eqn:eq55}
+\end{gather}
+\end{itemize}
+Answers \eqref{eqn:eq54} and \eqref{eqn:eq55} are independent of the radius of the sphere. Therefore, they remain unchanged under the limit when $R$ tends to zero. The concept of the field at the center when tending $R$ to zero is the field of a point dipole on itself, which is exactly the result we obtained in \eqref{eqn:eq52} and \eqref{eqn:eq53}. This remarkable compatibility showcases the strength of the mathematical methods we've employed to construct our theory.
+
+
+
+
+
+\section{The Final Instance}\label{section:5}
+One might consider a problem involving a diverged magnetization and draw parallels with polarization, thinking it might lead to a monopole term at that point. Let's delve into this problem.
+\begin{itemize}
+\item Consider a spherical magnetic matter with radius $R$ including the magnetization
+\begin{equation}
+\vb{M}(r)=\alpha \frac{\vu{r}}{r^2}\nonumber
+\end{equation}
+where $\alpha$ is constant. Investigate the magnetic field in space.
+\item We start with equations for $\vb{H}$ and then derive $\vb{B}$. Writing down the equations \textit{inside} the sphere:
+\begin{gather}
+\div\vb{H}=-\div\vb{M}=-4\pi\alpha\delta^3(r)\nonumber\\\curl\vb{H}=0\:,\: symmetry\rightarrow \vb{H}=H(r)\vu{r}\nonumber\\\int_V\div\vb{H}\ \dd\tau=\oint_{\partial V} \vb{H} \vdot \vb{dS}\rightarrow-\int_V 4\pi\alpha \delta^3(r) \ \dd\tau=4\pi r^2 H(r)\nonumber\\\vb{H}(r)=-\frac{\alpha}{r^2} \vu{r} \int_V\delta^3(r)\ \dd\tau=-\alpha\frac{\vu{r}}{r^2}\nonumber
+\end{gather}
+Which is held through whole space. To find $\vb{B}$ inside the sphere we obtain:
+\begin{gather}
+\vb{B}(r)=\mu_0\left( \vb{H}+\vb{M}\right)\nonumber
+\end{gather}
+So the magnetic field throughout space vanishes.
+\begin{gather}
+\vb{B}(r)=0\nonumber
+\end{gather}
+Note that the magnetic field outside the sphere is zero even comparing with the electric instance therefore $\vb{H}=0 , \vb{M}=0$ so $\vb{B}=0$. which doesn't cause any contradiction with whatever we've used to  build-up our theory and no monopole term is obtained.
+\end{itemize}
+
+\section{Confusion: Non-
+zero Magnetization Producing No Magnetic Field?}
+What we've recently obtained shows that there exists a magnetization vector field which leads to vanishing field everywhere. this might raise a potential confusion. Actually, if we attempt to build-up an electromangetic field $\vb{E}(\vb{r},t) , \vb{B}(\vb{r},t)$ using dipoles \textit{only} (i.e without using monopoles), the Maxwell's equations are:
+$$\div\vb{E}=-\div\vb{P}$$
+$$\curl\vb{E}=-\frac{\partial\vb{B}}{\partial t}$$
+$$\div\vb{B}=0$$
+$$\curl\vb{B}=\mu_0\curl\vb{M}+\mu_0\frac{\partial\vb{P}}{\partial t}+\mu_0\epsilon_0\frac{\partial\vb{E}}{\partial t}$$
+As these equations are sufficient to find $\vb{E}$, $\vb{B}$ fields and since $\div\vb{M}$ is not involved in equations ($\curl\vb{P}$ does according to $\partial\vb{P}/\partial t$ term), it does not affect fields. It's the fact that we obtained on the section~\ref{section:5} where $\curl\vb{M}=0$ leads to $\vb{B}=0$ despite nonzero $\div\vb{M}$ (and consequently nonzero $\vb{M}$). Hence, curl-free magnetizations produce no magnetic fields.
+
+\section{Griffiths's Theorem}
+This theorem is derived by \textit{D. J. Griffiths}. Here, it's generalized and viewed as gauge transformation where the final result is a specific case of the general form of theorem I've derived here.
+\\\\
+\textbf{Statement}\\ For any electric and magnetic fields $\vb{E}(\vb{r},t)$, $\vb{B}(\vb{r},t)$ consistent with Maxwell's equations ($\curl\vb{E}=-\partial\vb{B}/\partial t$, $\div\vb{B}=0$), there exists an arrangement of polarization and magnetization producing the given fields.\cite{book:91141798}\\\\
+\textbf{Proof}\\ As we're contructing fields without monopoles but dipoles, the maxwell's equations are:
+$$\div\vb{E}=-\div\vb{P}$$ $$\curl\vb{E}=-\frac{\partial\vb{B}}{\partial t}$$ $$\div\vb{B}=0$$ $$\curl\vb{B}=\mu_0\curl\vb{M}+\mu_0\frac{\partial\vb{P}}{\partial t}+\mu_0\epsilon_0\frac{\partial\vb{E}}{\partial t}$$
+Here, as discussed above, $\div\vb{M}$ does not influence fields so it's a free parameter and therefore there's not a \textit{unique} solution to $\vb{M}$ satisfying the given equations. a similar statement can be applied to $\vb{P}$. 
+
+One might argue that we need to be more cautious about this statement for $\vb{P}$ as its divergence is not the only term appearing in these equations but $\vb{P}$ itself appears in $\curl\vb{M}$.
+Given that:
+\begin{gather}
+\div\vb{P}=-\rho\label{eqn:eq7.1}\\\curl\vb{M}=\vb{J}-\frac{\partial\vb{P}}{\partial t}\label{eqn:eq7.2}
+\end{gather}
+According to Helmholtz's decomposition theorem, a vector field which its magnitude vanishes at infinity faster than $1/r$, is only determined by its divergence and curl by:
+$$\vb{P}(\vb{r})=-\grad\left(\frac{1}{4\pi}\int_V\frac{\grad'\vdot\vb{P}(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)+\curl\left(\frac{1}{4\pi}\int_V\frac{\grad'\times\vb{P}(\vb{r'})}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)$$
+Here, $\vb{M}$ and $\vb{P}$ decomposition is given by:
+\begin{align}
+\vb{P}(\vb{r})=&-\grad\left(\frac{1}{4\pi}\int_V\frac{\rho(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)+\curl\left(\frac{1}{4\pi}\int_V\frac{\grad'\times\vb{P}(\vb{r'})}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)\nonumber\\
+\vb{M}(\vb{r})=&-\grad\left(\frac{1}{4\pi}\int_V\frac{\grad'\vdot\vb{M}(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)+\curl\left(\frac{1}{4\pi}\int_V\frac{\vb{J}(\vb{r}')-\frac{\partial\vb{P}}{\partial t}(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)\nonumber
+\end{align}
+ and these $\vb{M}$ and $\vb{P}$ hold \eqref{eqn:eq7.1} and \eqref{eqn:eq7.2} for any \textit{arbitrarily choosed} $\div\vb{M}$ and $\curl\vb{P}$. Hence, the presence of $\curl\vb{P}$ in \eqref{eqn:eq7.2} doesn't influence the fact that it is free to choose.
+
+Therefore, a general solution for $\vb{P}(\vb{r},t)$ and $\vb{M}(\vb{r},t)$ producing fields $\vb{E}(\vb{r},t)$ and $\vb{B}(\vb{r},t)$ is:
+\begin{align}
+\vb{P}(\vb{r})=&-\grad\left(\frac{1}{4\pi}\int_V\frac{\rho(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)+\curl\left(\frac{1}{4\pi}\int_V\frac{\vb{A}_p(\vb{r'})}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)\nonumber\\
+\vb{M}(\vb{r})=&-\grad\left(\frac{1}{4\pi}\int_V\frac{\phi_m(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)+\curl\left(\frac{1}{4\pi}\int_V\frac{\vb{J}(\vb{r}')+\frac{\partial\vb{P}}{\partial t}(\vb{r}')}{|\vb{r}-\vb{r}'|}\ \dd\tau'\right)\nonumber
+\end{align}
+for an arbitrary $\phi_m$ and arbitrary divergence-free $\vb{A_p}$. We've derived such $\vb{P}$ and $\vb{M}$ which satisfy equations \eqref{eqn:eq7.1} and \eqref{eqn:eq7.2} so clearly exists according to their expression.
+$$Q. E. D. $$
+
+Choosing $\phi_m=0$ \& $\vb{A_p}=0$, we obtain the $\vb{P}$ and $\vb{M}$ vector fields and so we have proven existance of them:
+\begin{align}
+\vb{P}(\vb{r})=&-\grad\left[\frac{1}{4\pi}\int_V\frac{\rho(\vb{r}')}{\mathcal{R}}\ \dd\tau'\right]\label{eqn:eq7.3}\\
+\vb{M}(\vb{r})=&\curl\left[\frac{1}{4\pi}\int_V\frac{1}{\mathcal{R}}\left(\vb{J}(\vb{r}')+\grad'\left[\frac{1}{4\pi}\int_V\frac{1}{\mathcal{R}'}\frac{\partial \rho}{\partial t}(\vb{r}'')\ \dd\tau''\right]\right)\ \dd\tau'\right]\label{eqn:eq7.4}
+\end{align}
+where $\mathcal{R}\equiv|\vb{r}-\vb{r}'|$ and $\mathcal{R}'\equiv|\vb{r}'-\vb{r}''|$. Now, for simplicity, we might prefer to choose them as:
+$$\vb{A}_p=\mu_0\epsilon_0\frac{\partial\vb{M}}{\partial t}\quad,\quad\phi_m=0$$
+Writing down all the equations for $\vb{P}$ and $\vb{M}$:
+$$-\div\vb{P}=\rho\quad,\quad\curl\vb{P}=\mu_0\epsilon_0\frac{\partial\vb{M}}{\partial t}$$
+$$\div\vb{M}=0\quad,\quad\curl\vb{M}=\vb{J}-\frac{\partial\vb{P}}{\partial t}$$
+Given that the solution to these equations, which adhere to the specified boundary conditions, is unique, we might propose that $\vb{P} = -\epsilon_0 \vb{E}$ and $\vb{M} = \vb{B} / \mu_0$. This guess can be checked by substituting these expressions into the equations above. Since the fields satisfy Maxwell's equations, this solution is also confirmed by these fundamental laws.
+
+
+Hence, any fields such as $\vb{E}(\vb{r},t)$ and $\vb{B}(\vb{r},t)$ can be produced by the following polarization and magnetization:
+$$\vb{P}(\vb{r},t)=-\epsilon_0\vb{E}(\vb{r},t)$$
+$$\vb{M}(\vb{r},t)=\frac{1}{\mu_0}\vb{B}(\vb{r},t)$$
+which is extremely simpler than \eqref{eqn:eq7.3} and \eqref{eqn:eq7.4} to obtain.
+
+
+\section{Parity of $(\vb{P},\vb{M})$ and $(\rho,\vb{J})$}
+As we've shown, the electric potential (thus electric field) produced by polarization $\vb{P}$ can be completely generated by chrage densities through \eqref{eqn:eq10} and \eqref{eqn:eq25} by:
+$$\rho=-\div\vb{P}\quad,\quad\vb{J}=\frac{\partial\vb{P}}{\partial t}+\curl\vb{M}$$
+
+The significance of Griffith's theorem lies in its demonstration of the reverse relationship: fields produced by any charge and current densities, $(\rho,\vb{J})$, can also be fully generated by polarization and magnetization. This is confirmed through \eqref{eqn:eq7.3} and \eqref{eqn:eq7.4} or the following simplified forms:
+$$\vb{P}=-\epsilon_0\vb{E}\quad,\quad\vb{M}=\frac{1}{\mu_0}\vb{B}$$
+But the difference, which needs to be thought about, is that the $(\rho,\vb{J})$ derived from \eqref{eqn:eq10} and \eqref{eqn:eq25} are \textit{unique} meaning that for any specific $(\vb{P},\vb{M})$ there exists only a single charge and current density arrangement producing the same field. but its converse doesn't hold as there exists many $(\vb{P},\vb{M})$
+This observation underscores a significant phenomenon: utilizing dipoles to describe natural processes is not merely an approximation, but actually serves as a \textit{basis} for formulating electromagnetism. Our choice of framework for addressing problems in electromagnetism directly depends on whether it simplifies the problem or aligns with what we can feasibly measure. It may, therefore, be practical to treat dipoles on the same fundamental level as monopoles, focusing on measuring $(\vb{P},\vb{M})$ instead of $(\rho,\vb{J})$ to explore physical phenomena.
+
+
+
+
+\section{Conclusion}
+Electric and magnetic dipoles, while sharing many similarities, exhibit distinct characteristics reflected in an additional term within their respective fields, represented by Dirac delta functions. Although this term has no impact on the outside fields, its significance becomes apparent within matter, where a dipole is always present at the point under consideration. The electric and magnetic dipole fields are:
+\begin{gather}
+\vb{E}_1(\vb{r})=\frac{1}{4\pi\epsilon_0}\frac{3(\vb{p}\vdot\vu{r})\vu{r}-\vb{p}}{r^3}-\frac{1}{3}\frac{\vb{p}}{\epsilon_0} \delta^3(\vb{r})\nonumber\\\vb{B}_1(\vb{r})=\frac{\mu_0}{4\pi}\frac{3(\vb{m}\vdot\vu{r})\vu{r}-\vb{m}}{r^3}+\frac{2}{3}\mu_0 \vb{m} \delta^3(\vb{r})\nonumber
+\end{gather}
+The disparity in their Dirac delta terms serves as the fundamental origin for any distinctions observed in their field behavior.\cite{book:925320}
+
+
+
+\bibliographystyle{unsrt}  % Choose the style (plain, unsrt, alpha, apalike, etc.)
+\bibliography{references}  % The name of the .bib file (without the .bib extension)
+
+
+\end{document} 
