@@ -6,6 +6,121 @@
     <title>CV | Sohrab Maleki</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CV-specific enhancements */
+        .cv-item {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--secondary-color);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            transition: var(--transition);
+        }
+
+        .cv-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-item-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+
+        .cv-item-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .cv-item-subtitle {
+            font-style: italic;
+            margin-bottom: 0.3rem;
+            color: var(--primary-color);
+        }
+
+        .cv-item-description {
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background-color: var(--light-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .awards-list {
+            list-style: none;
+        }
+
+        .awards-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .awards-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Animation for download button */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .download-btn {
+            animation: pulse 2s infinite;
+        }
+
+        .download-btn:hover {
+            animation: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cv-item-header {
+                flex-direction: column;
+            }
+            
+            .cv-item-date {
+                margin-top: 0.3rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,14 +128,13 @@
             <ul>
                 <li class="name-item"><a href="index.html">Sohrab Maleki</a></li>
                 <li><a href="cv.html">CV</a></li>
-                <!-- <li><a href="publications.html">Publications</a></li> -->
                 <li><a href="notes.html">Notes</a></li>
                 <li><a href="talks.html">Talks</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container flex-row">
         <aside class="sidebar">
             <div class="portrait-container">
                 <img src="images/portrait.png" alt="Sohrab Maleki" class="portrait">
@@ -46,17 +160,17 @@
         </aside>
 
         <main class="content">
-            <section class="cv-section">
-                <h2>Curriculum Vitae</h2>
+            <section class="section">
+                <h2 class="section-header">Curriculum Vitae</h2>
                 
-                <div class="cv-download">
-                    <a href="docs/cv.pdf" class="download-btn">
+                <div class="cv-download" style="text-align: center; margin: 1.5rem 0;">
+                    <a href="docs/cv.pdf" class="btn download-btn">
                         <i class="fas fa-download"></i> Download CV (PDF)
                     </a>
                 </div>
                 
-                <div class="cv-content">
-                    <h3>Education</h3>
+                <div class="section">
+                    <h3 class="subsection-header">Education</h3>
                     <div class="cv-item">
                         <div class="cv-item-header">
                             <span class="cv-item-title">Sharif University of Technology</span>
@@ -75,8 +189,10 @@
                             <p>GPA: 3.79/4</p>
                         </div>
                     </div>
-                    
-                    <h3>Work Experience</h3>
+                </div>
+                
+                <div class="section">
+                    <h3 class="subsection-header">Work Experience</h3>
                     <div class="cv-item">
                         <div class="cv-item-header">
                             <span class="cv-item-title">Lead Editor</span>
@@ -100,8 +216,10 @@
                         </div>
                         <div class="cv-item-subtitle">of Physics Olympiad Institution of Resonance</div>
                     </div>
-                    
-                    <h3>Skills</h3>
+                </div>
+                
+                <div class="section">
+                    <h3 class="subsection-header">Skills</h3>
                     <div class="cv-item">
                         <div class="cv-item-header">
                             <span class="cv-item-title">Computational</span>
@@ -126,7 +244,7 @@
                             <span class="cv-item-title">Languages</span>
                         </div>
                         <div class="cv-item-description">
-                            <ul class="language-list">
+                            <ul class="list">
                                 <li><strong>Persian:</strong> Mother-tongue</li>
                                 <li><strong>English:</strong> Professional proficiency</li>
                                 <li><strong>French:</strong> Basic knowledge</li>
@@ -134,8 +252,10 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    <h3>Awards and Honors</h3>
+                </div>
+                
+                <div class="section">
+                    <h3 class="subsection-header">Awards and Honors</h3>
                     <div class="cv-item">
                         <div class="cv-item-description">
                             <ul class="awards-list">

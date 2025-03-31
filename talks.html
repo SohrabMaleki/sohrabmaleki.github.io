@@ -21,7 +21,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container flex-row">
         <aside class="sidebar">
             <div class="portrait-container">
                 <img src="images/portrait.png" alt="Sohrab Maleki" class="portrait">
@@ -47,12 +47,14 @@
         </aside>
 
         <main class="content">
-            <section class="cv-section">
-                <h2>Talks & Presentations</h2>
-                <div class="talk-category">
-                    <h3>Historical Papers</h3>
-                    <p><i>Historical Papers</i> is a study circle that in each session (almost monthly), the corresponding instructor presents a significant (usually almost groundbreaking)”historical” paper in physics. It is held under Quanta Study Circles at SUT.</p>
+            <section class="section">
+                <h2 class="section-header">Talks & Presentations</h2>
+                
+                <div class="section">
+                    <h3 class="subsection-header">Historical Papers</h3>
+                    <p><i>Historical Papers</i> is a study circle that in each session (almost monthly), the corresponding instructor presents a significant (usually almost groundbreaking)"historical" paper in physics. It is held under Quanta Study Circles at SUT.</p>
                     <div style="margin-top: 1.5em;"></div>
+                    
                     <div class="talk-with-poster">
                         <div class="talk-poster" onclick="openLightbox('hp1-poster.jpg')">
                             <img src="images/hp1-poster.jpg" alt="Historical Papers 01">
@@ -61,19 +63,17 @@
                             <strong>Session 01 - Planck, 1900</strong>
                             <p><em>Quanta Study Circles</em>, SUT, 9 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
-                            <p>In the late 19th and early 20th centuries, discrepancies were observed between experimental results and theoretical predictions based on classical physics. Among these discrepancies was the problem of black-body radiation. The total radiative power of a black body was described using thermodynamic considerations, but the frequency distribution of this radiation was inconsistent with theoretical predictions. In 1900, Max Planck proposed a relationship for the frequency distribution of black-body radiation by introducing the hypothesis of quantized energy, which showed significant agreement with experimental data. This achievement is considered the foundation for the development of quantum mechanics. In this session, the historical context and content of Planck’s paper will be examined and analyzed.</p>
-                            <div class="talk-links">
-                                <a href="files/hp1-presentation.pdf"><i class="far fa-file-pdf"></i> Slides</a>
-                                <a href="https://youtube.com/example"><i class="fas fa-video"></i> Recording</a>
+                            <p>In the late 19th and early 20th centuries, discrepancies were observed between experimental results and theoretical predictions based on classical physics. Among these discrepancies was the problem of black-body radiation. The total radiative power of a black body was described using thermodynamic considerations, but the frequency distribution of this radiation was inconsistent with theoretical predictions. In 1900, Max Planck proposed a relationship for the frequency distribution of black-body radiation by introducing the hypothesis of quantized energy, which showed significant agreement with experimental data. This achievement is considered the foundation for the development of quantum mechanics. In this session, the historical context and content of Planck's paper will be examined and analyzed.</p>
+                            <div class="link-group">
+                                <a href="files/hp1-presentation.pdf" class="link"><i class="far fa-file-pdf link-icon"></i> Slides</a>
+                                <a href="https://youtube.com/example" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
                 
-                <div class="talk-category">
-                    <h3>Kinetic Theory</h3>
+                <div class="section">
+                    <h3 class="subsection-header">Kinetic Theory</h3>
                     <p><i>Kinetic Theory</i> is a study circle that has covered topics on the Kinetic Theory in an intensive series of online sessions presented by me.</p>
                     <div style="margin-top: 1.5em;"></div>
 
@@ -86,9 +86,9 @@
                             <p><em>Quanta Study Circles</em>, SUT, 16 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
                             <p>In this lecture, I start the investigating elementary kinetic theory. I obtain the so-called Maxwell-Boltzmann distribution and then, delve into calculating cool properties of matter assuming thermal equilibrium.</p>
-                            <div class="talk-links">
-                                <a href="files/kt1.pdf"><i class="far fa-file-pdf"></i> Notes</a>
-                                <a href="https://youtu.be/vGDPb_KVPFQ"><i class="fas fa-video"></i> Recording</a>
+                            <div class="link-group">
+                                <a href="files/kt1.pdf" class="link"><i class="far fa-file-pdf link-icon"></i> Notes</a>
+                                <a href="https://youtu.be/vGDPb_KVPFQ" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
@@ -101,10 +101,10 @@
                             <strong>2. Transport Phenomenon</strong>
                             <p><em>Quanta Study Circles</em>, SUT, 19 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
-                            <p>In this lecture, I investigate the Transport Phenomena. I begin with the mean free path; Then I turn to the Random Walk problem and consequently express the diffusion, fomulate the viscosity and finally, thermal conductivity using elementary kinetic theory methods. This session was the end of “Elementary Kinetic Theory” topic.</p>
-                            <div class="talk-links">
-                                <a href="files/kt2.pdf"><i class="far fa-file-alt"></i> Notes</a>
-                                <a href="https://youtu.be/muTp_7Q_Y54"><i class="fas fa-video"></i> Recording</a>
+                            <p>In this lecture, I investigate the Transport Phenomena. I begin with the mean free path; Then I turn to the Random Walk problem and consequently express the diffusion, fomulate the viscosity and finally, thermal conductivity using elementary kinetic theory methods. This session was the end of "Elementary Kinetic Theory" topic.</p>
+                            <div class="link-group">
+                                <a href="files/kt2.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
+                                <a href="https://youtu.be/muTp_7Q_Y54" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
@@ -118,10 +118,9 @@
                             <p><em>Quanta Study Circles</em>, SUT, 23 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
                             <p>In this lecture, I review classical mechanics (and a bit of thermodynamics). This builds a comprehensive mathematical structure to beginning the treatment with the dynamics of many body systems (what we aim to reach in kinetic theory).</p>
-                            <div class="talk-links">
-                                <a href="files/kt3.pdf"><i class="far fa-file-alt"></i> Notes</a>
-                                <a href="https://youtu.be/hKLHaLn7ch0"><i class="fas fa-video"></i> Recording</a>
-
+                            <div class="link-group">
+                                <a href="files/kt3.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
+                                <a href="https://youtu.be/hKLHaLn7ch0" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
@@ -134,11 +133,10 @@
                             <strong>4. The BBGKY Hierarchy</strong>
                             <p><em>Quanta Study Circles</em>, SUT, 25 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
-                            <p>This lecture is the start of the advanced kinetic theory. In this lecture, I begin with Liouville’s equation and formulate the BBGKY hierarchy. Although, as we show, it doesn’t make life any easier than Liouville’s equation, It’s the way we reformulate the general problem in a way that is comprehensive for approximation methods.</p>
-                            <div class="talk-links">
-                                <a href="files/kt4.pdf"><i class="far fa-file-alt"></i> Notes</a>
-                                <a href="https://youtu.be/S_hVJb8l7HY"><i class="fas fa-video"></i> Recording</a>
-
+                            <p>This lecture is the start of the advanced kinetic theory. In this lecture, I begin with Liouville's equation and formulate the BBGKY hierarchy. Although, as we show, it doesn't make life any easier than Liouville's equation, It's the way we reformulate the general problem in a way that is comprehensive for approximation methods.</p>
+                            <div class="link-group">
+                                <a href="files/kt4.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
+                                <a href="https://youtu.be/S_hVJb8l7HY" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
@@ -151,10 +149,10 @@
                             <strong>5. Boltzmann's Equation (1)</strong>
                             <p><em>Quanta Study Circles</em>, SUT, 27 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
-                            <p>In this lecture, I begin the investigation of Boltzmann’s equation. In this series of sessions, we cover two approaches to Boltzmann’s equation: A more easy-going approach and another more rigorous way. In this lecture, we cover the first approach. Throughout the investigations, we would be relied on Boltzmann’s equation for many purposes.</p>
-                            <div class="talk-links">
-                                <a href="files/kt5.pdf"><i class="far fa-file-alt"></i> Notes</a>
-                                <a href="https://youtu.be/aRKiGDrKWKI"><i class="fas fa-video"></i> Recording</a>
+                            <p>In this lecture, I begin the investigation of Boltzmann's equation. In this series of sessions, we cover two approaches to Boltzmann's equation: A more easy-going approach and another more rigorous way. In this lecture, we cover the first approach. Throughout the investigations, we would be relied on Boltzmann's equation for many purposes.</p>
+                            <div class="link-group">
+                                <a href="files/kt5.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
+                                <a href="https://youtu.be/aRKiGDrKWKI" class="link"><i class="fas fa-video link-icon"></i> Recording</a>
                             </div>
                         </div>
                     </div>
@@ -168,8 +166,8 @@
                             <p><em>Quanta Study Circles</em>, SUT, 30 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
                             <p>In this lecture, I begin to discuss <i>detailed balance</i> condition and how the collision integral is the tendacy of the many body system to Boltzmann distribution by producing the Maxwell-Boltzmann distribution for an ideal gas. Then, I turn into the Quantum version of Boltzmann equation and finally investigate a better derivation of Boltzmnann equation starting from the BBGKY hierarchy.</p>
-                            <div class="talk-links">
-                                <a href="files/kt6.pdf"><i class="far fa-file-alt"></i> Notes</a>
+                            <div class="link-group">
+                                <a href="files/kt6.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
                             </div>
                         </div>
                     </div>
@@ -183,12 +181,11 @@
                             <p><em>Quanta Study Circles</em>, SUT, 30 March 2025</p>
                             <div style="margin-top: 1.5em;"></div>
                             <p>In this lecture, I'd derive and discuss the so-called H-Theorem originally derived by L. Boltzmann. I demonstrate how the "molecular chaos" assumption is the key to irreversibility. Then I turn to elementary discussions about Fluid Dynamics.</p>
-                            <div class="talk-links">
-                                <a href="files/kt7.pdf"><i class="far fa-file-alt"></i> Notes</a>
+                            <div class="link-group">
+                                <a href="files/kt7.pdf" class="link"><i class="far fa-file-alt link-icon"></i> Notes</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
         </main>
