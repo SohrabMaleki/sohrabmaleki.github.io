@@ -1,6 +1,6 @@
 ---
 title: The question of convergence for observables with continuous spectra
-category: my-notes
+category: little-topics
 order: 1
 links:
 - label: PDF in English
