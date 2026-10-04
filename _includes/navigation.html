@@ -1,9 +1,13 @@
-<header>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-name" href="{{ '/index.html' | relative_url }}"{% if page.url == '/index.html' or page.url == '/' %} aria-current="page"{% endif %}>{{ site.data.profile.name | escape }}</a>
     <nav class="main-nav" aria-label="Main navigation">
-        <ul>
-            {% for item in site.data.navigation %}{% if item.enabled %}
-            <li{% if item.class %} class="{{ item.class }}"{% endif %}><a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.url == '/' and item.url == '/index.html' %} aria-current="page"{% endif %}>{{ item.label | escape }}</a></li>
-            {% endif %}{% endfor %}
-        </ul>
+      <ul>
+        {% assign collection_archive = '/' | append: page.collection | append: '.html' %}
+        {% for item in site.data.navigation %}{% if item.enabled and item.url != '/index.html' %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.collection and item.url == collection_archive %} aria-current="page"{% endif %}>{{ item.label | escape }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
     </nav>
+  </div>
 </header>

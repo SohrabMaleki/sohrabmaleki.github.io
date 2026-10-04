@@ -9,10 +9,8 @@ poster: /images/kt3-poster.jpg
 poster_alt: Kinetic Theory 03
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt3.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/hKLHaLn7ch0
 date_display: 23 March 2025
 ---

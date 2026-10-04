@@ -11,10 +11,8 @@ published: false
 links:
 - label: Notes
   url: /files/my-notes.pdf
-  icon: far fa-file-pdf
 - label: Recording
   url: https://youtu.be/VIDEO_ID
-  icon: fas fa-video
 ---
 
 Write the talk description here.

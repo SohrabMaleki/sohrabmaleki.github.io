@@ -1,20 +1,20 @@
 ---
 layout: default
 ---
-<section class="section">
-    <div class="header">
-        <h2 class="section-header">{{ page.heading | escape }}</h2>
-        {{ content }}
-        {% assign series_list = site.talk_series | sort: 'order' %}
-        <ul>{% for series in series_list %}<li><a href="#{{ series.anchor }}">{{ series.title | escape }}</a></li>{% endfor %}</ul>
-    </div>
-    {% for series in series_list %}
-    <div class="section">
-        <h3 class="subsection-header" id="{{ series.anchor }}">{{ series.title | escape }}</h3>
-        {% if series.poster %}<div class="series-spacer"></div><div class="talk-with-poster">{% include poster.html item=series %}{{ series.content | markdownify }}</div>{% else %}{{ series.content | markdownify }}{% endif %}
-        <div class="series-spacer"></div>
-        {% assign talks = site.talks | where: 'series', series.key | sort: 'order' %}
-        {% for talk in talks %}{% include talk-card.html item=talk %}{% endfor %}
-    </div>
-    {% endfor %}
+<header class="page-heading">
+  <h1>{{ page.heading | escape }}</h1>
+  <div class="prose">{{ content }}</div>
+  {% assign series_list = site.talk_series | sort: 'order' %}
+  <nav aria-label="Study circles"><ul class="section-nav">{% for series in series_list %}<li><a href="#{{ series.anchor }}">{{ series.title | escape }}</a></li>{% endfor %}</ul></nav>
+</header>
+{% for series in series_list %}
+<section class="archive-section">
+  <h2 class="section-heading" id="{{ series.anchor }}">{{ series.title | escape }}</h2>
+  <div class="series-intro">
+    <div class="prose section-intro">{{ series.content | markdownify }}</div>
+    {% include poster.html item=series %}
+  </div>
+  {% assign talks = site.talks | where: 'series', series.key | sort: 'order' %}
+  {% for talk in talks %}{% include entry.html item=talk %}{% endfor %}
 </section>
+{% endfor %}

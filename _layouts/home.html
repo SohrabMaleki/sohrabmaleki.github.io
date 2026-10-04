@@ -1,15 +1,23 @@
 ---
 layout: default
 ---
-<section class="section">
-    <h2 class="section-header">{{ page.heading | escape }}</h2>
-    <div class="home-intro">{{ content }}</div>
-    <h3 class="subsection-header">{{ page.subheading | escape }}</h3>
-    {% assign sections = site.about | sort: 'order' %}
-    {% for section in sections %}
-    <div class="about-subsection">
-        {% if section.title and section.title != empty %}<h4>{{ section.title | escape }}</h4>{% endif %}
-        {{ section.content | markdownify }}
-    </div>
-    {% endfor %}
+{% include profile.html %}
+<section class="prose home-intro">
+  <h2>{{ page.heading | escape }}</h2>
+  {{ content }}
+</section>
+<nav class="explore-links" aria-label="Explore the website">
+  <a href="{{ '/notes.html' | relative_url }}">Notes <span aria-hidden="true">&rarr;</span><small>{{ site.notes.size }} notes &amp; paper reviews</small></a>
+  <a href="{{ '/research.html' | relative_url }}">Research <span aria-hidden="true">&rarr;</span><small>{{ site.research.size }} research write-ups</small></a>
+  <a href="{{ '/talks.html' | relative_url }}">Talks <span aria-hidden="true">&rarr;</span><small>{{ site.talks.size }} talks &amp; lectures</small></a>
+</nav>
+<section class="home-sections prose">
+  <h2>{{ page.subheading | escape }}</h2>
+  {% assign sections = site.about | sort: 'order' %}
+  {% for section in sections %}
+  <section class="home-section">
+    {% if section.title and section.title != empty %}<h3>{{ section.title | escape }}</h3>{% endif %}
+    {{ section.content | markdownify }}
+  </section>
+  {% endfor %}
 </section>

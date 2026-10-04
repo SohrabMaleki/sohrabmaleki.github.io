@@ -10,10 +10,8 @@ poster_alt: Quantum Theory 011
 anchor: QT11
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/qt11.pdf
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 12 Aug 2025
 ---

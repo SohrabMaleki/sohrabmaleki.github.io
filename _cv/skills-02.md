@@ -8,4 +8,3 @@ title: Languages
 - **English:** Professional proficiency
 - **French:** Basic knowledge
 - **Deutsch:** Basic knowledge
-{: .list}

@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 7
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/Information Theory and Statistical Mechanics.pdf
 ---
 

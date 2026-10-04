@@ -6,10 +6,8 @@ authors: S. Maleki, A. Collaborator
 published: false
 links:
 - label: PDF
-  icon: far fa-file-pdf
   unavailable: true
 - label: Talk
-  icon: fas fa-video
   unavailable: true
 ---
 

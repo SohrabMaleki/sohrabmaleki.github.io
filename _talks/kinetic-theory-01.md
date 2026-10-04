@@ -9,10 +9,8 @@ poster: /images/kt1-poster.jpg
 poster_alt: Kinetic Theory 01
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/kt1.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/vGDPb_KVPFQ
 date_display: 16 March 2025
 ---

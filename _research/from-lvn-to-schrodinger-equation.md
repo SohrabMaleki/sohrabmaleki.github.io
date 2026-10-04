@@ -4,7 +4,6 @@ category: my-insights
 order: 3
 links:
 - label: PDF
-  icon: far fa-file-pdf
   url: /files/LvN2Sch.pdf
 ---
 

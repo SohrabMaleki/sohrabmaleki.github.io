@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 3
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/RapidlyExpandingBEC.pdf
 ---
 

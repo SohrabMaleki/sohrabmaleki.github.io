@@ -9,10 +9,8 @@ poster: /images/kt6-poster.jpg
 poster_alt: Kinetic Theory 06
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt6.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/6B0nCsVqFIA
 date_display: 30 March 2025
 ---

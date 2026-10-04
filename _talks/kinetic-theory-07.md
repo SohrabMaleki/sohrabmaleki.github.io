@@ -9,10 +9,8 @@ poster: /images/kt7-poster.jpg
 poster_alt: Kinetic Theory 07
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt7.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/H2kriva5jgI
 date_display: 1 April 2025
 ---

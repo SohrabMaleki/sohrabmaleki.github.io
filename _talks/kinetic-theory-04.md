@@ -9,10 +9,8 @@ poster: /images/kt4-poster.jpg
 poster_alt: Kinetic Theory 04
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt4.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/S_hVJb8l7HY
 date_display: 25 March 2025
 ---

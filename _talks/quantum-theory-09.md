@@ -9,10 +9,8 @@ poster: /images/qt9-poster.jpg
 poster_alt: Quantum Theory 09
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/qt9.pdf
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 02 Aug 2025
 ---

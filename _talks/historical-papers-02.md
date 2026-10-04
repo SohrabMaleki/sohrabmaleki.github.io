@@ -9,10 +9,8 @@ poster: /images/hp1-poster.jpg
 poster_alt: Historical Papers 01
 links:
 - label: Slides
-  icon: far fa-file-pdf
   url: /files/hp1-presentation.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/XRCm1KYDxZU
 date_display: 9 March 2025
 ---

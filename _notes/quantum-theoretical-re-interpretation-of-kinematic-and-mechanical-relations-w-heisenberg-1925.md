@@ -4,10 +4,8 @@ category: papers-i-ve-found-interesting
 order: 10
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/Heisenberg's Paper.pdf
 - label: MK Explanation PDF
-  icon: far fa-file-pdf
   url: /files/x1-011.pdf
 ---
 

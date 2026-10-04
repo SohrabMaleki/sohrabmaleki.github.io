@@ -9,10 +9,8 @@ poster: /images/qt2-poster.jpg
 poster_alt: Quantum Theory 01
 links:
 - label: Presentation
-  icon: far fa-file-pdf
   url: /files/qt2.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/TlTKH9GgvTE
 date_display: 9 July 2025
 ---

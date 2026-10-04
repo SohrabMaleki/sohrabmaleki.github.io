@@ -1,5 +1,8 @@
 # Migration notes
 
+> Historical report for the initial migration. The subsequent redesign is described
+> in [redesign.md](redesign.md).
+
 ## Preserved
 
 - Homepage, CV, Notes, and Talks prose, titles, section order, and content order.

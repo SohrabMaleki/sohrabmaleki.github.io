@@ -1,10 +1,6 @@
 ---
 layout: default
 ---
-<section class="section">
-    {% if page.collection == 'talks' %}{% include talk-card.html item=page %}
-    {% elsif page.collection == 'publications' %}<ul class="publication-list">{% include publication-card.html item=page %}</ul>
-    {% else %}{% include note-card.html item=page %}{% endif %}
-    {% assign archive_url = '/' | append: page.collection | append: '.html' %}
-    <p><a href="{{ archive_url | relative_url }}">Back to {{ page.collection | escape }}</a></p>
-</section>
+{% assign archive_url = '/' | append: page.collection | append: '.html' %}
+<p class="back-link"><a href="{{ archive_url | relative_url }}">&larr; Back to {{ page.collection | escape }}</a></p>
+{% include entry.html item=page heading='h1' detail=true %}

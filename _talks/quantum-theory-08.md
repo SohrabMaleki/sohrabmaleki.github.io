@@ -9,10 +9,8 @@ poster: /images/qt8-poster.jpg
 poster_alt: Quantum Theory 08
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/qt8.pdf
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 31 July 2025
 ---

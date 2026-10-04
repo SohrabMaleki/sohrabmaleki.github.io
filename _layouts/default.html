@@ -2,15 +2,10 @@
 <html lang="en">
 {% include head.html %}
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    {% include navigation.html %}
-    <div class="container flex-row">
-        {% include sidebar.html %}
-        <main class="content" id="main-content">
-            {{ content }}
-        </main>
-    </div>
-    {% if page.lightbox %}{% include lightbox.html %}{% endif %}
-    {% include footer.html %}
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  {% include navigation.html %}
+  <main class="site-main" id="main-content">{{ content }}</main>
+  {% if page.lightbox %}{% include lightbox.html %}{% endif %}
+  {% include footer.html %}
 </body>
 </html>

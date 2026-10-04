@@ -9,10 +9,8 @@ poster: /images/kt5-poster.jpg
 poster_alt: Kinetic Theory 05
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt5.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/aRKiGDrKWKI
 date_display: 27 March 2025
 ---

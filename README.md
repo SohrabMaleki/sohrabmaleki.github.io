@@ -1,6 +1,6 @@
 # Sohrab Maleki's academic website
 
-Jekyll + Markdown, using the original site design and GitHub Pages dependencies.
+Jekyll + Markdown with a minimal academic design and GitHub Pages dependencies.
 The custom domain remains **sohrabmaleki.ir**. Existing URLs (`index.html`,
 `cv.html`, `notes.html`, `talks.html`, and `publications.html`) remain valid.
 
@@ -9,7 +9,7 @@ The custom domain remains **sohrabmaleki.ir**. Existing URLs (`index.html`,
 | Content | Where to edit | Where it appears |
 | --- | --- | --- |
 | Home introduction | `index.md` | Homepage |
-| Home cards | `_about/*.md` | Homepage, ordered by `order` |
+| Home sections | `_about/*.md` | Homepage, ordered by `order` |
 | CV entries | `_cv/*.md` | CV, grouped by `group`, ordered by `order` |
 | Talks | `_talks/*.md` | Talks page, grouped by `series`, and individual pages |
 | Study-circle introductions | `_talk_series/*.md` | Talks page, ordered by `order` |
@@ -17,7 +17,7 @@ The custom domain remains **sohrabmaleki.ir**. Existing URLs (`index.html`,
 | Research write-ups | `_research/*.md` | My Insights on Notes, Research archive, and individual pages |
 | Publications | `_publications/*.md` | Publications archive and individual pages |
 | Projects | `_projects/*.md` | Projects archive and individual pages |
-| Identity, email, social profiles | `_data/profile.yml` | Shared sidebar |
+| Identity, email, social profiles | `_data/profile.yml` | Homepage profile and footer |
 | Navigation | `_data/navigation.yml` | Shared header |
 | Section names and introductions | `_data/*_sections.yml` | Corresponding archive |
 
@@ -27,8 +27,8 @@ Templates use `published: false` so unfinished examples cannot appear on the liv
 Remove that line, or set it to `true`, when ready. See [the content guide](docs/content-guide.md).
 
 Existing research is still shown under **My Insights** on `notes.html` to preserve
-the existing presentation. The main navigation keeps Home, CV, Notes, and Talks.
-Enable Publications, Research, or Projects in `_data/navigation.yml` when desired.
+the existing presentation. The shared navigation includes CV, Notes, Talks, and Research; the site name links home.
+Enable Publications or Projects in `_data/navigation.yml` when desired.
 Their archive pages already exist at `/publications.html`, `/research.html`, and
 `/projects.html`.
 
@@ -83,9 +83,10 @@ No custom Jekyll plugins, themes, JavaScript build pipeline, or CMS are required
 ## Organization
 
 `_layouts/` contains page layouts. `_includes/` contains the shared head, navigation,
-sidebar, footer, poster dialog, and content cards. Original shared styles remain in
-`css/style.css`; page-specific styles formerly embedded in HTML are now in
-`css/home.css`, `css/cv.css`, and `css/notes.css`. `images/` and `files/` retain all
+homepage profile, footer, poster dialog, and a shared content-entry include.
+The entire visual design is in one stylesheet: `css/style.css`. Markdown content
+needs no style settings, CSS classes, or icon configuration. No external fonts or
+icon-font services are loaded. `images/` and `files/` retain all
 original filenames and assets so existing download URLs continue to work.
 
 See [migration notes](docs/migration-notes.md) for existing defects corrected and
@@ -93,3 +94,5 @@ items that still need real content or a missing asset.
 
 See [the migration verification report](docs/verification.md) for build, content,
 browser, asset, and external-link results.
+
+See [the redesign report](docs/redesign.md) for the current design and verification results.

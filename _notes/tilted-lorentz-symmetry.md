@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 1
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/TiltedLorentzSymmetry.pdf
 ---
 

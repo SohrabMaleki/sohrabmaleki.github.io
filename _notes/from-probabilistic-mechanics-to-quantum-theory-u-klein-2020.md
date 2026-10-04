@@ -4,10 +4,8 @@ category: papers-i-ve-found-interesting
 order: 9
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/From Probabilistic Mechanics to Quantum Theory.pdf
 - label: My Explanation PDF
-  icon: far fa-file-pdf
   url: /files/topic1.pdf
 ---
 

@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 8
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/Violation of Boltzmann's H Theorem in Real Gases.pdf
 anchor: H-Thm-Violation
 ---

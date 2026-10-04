@@ -8,12 +8,12 @@ page URL. Existing archive pages and anchors remain unchanged.
 
 - `title`: displayed title. Quote titles that contain a colon or special YAML characters.
 - `order`: a number, sorted ascending within the section. New items appear automatically.
-- `links`: optional resource buttons. Local paths start with `/files/`; external URLs
+- `links`: optional resource links. Local paths start with `/files/`; external URLs
   start with `https://`. Put filenames with spaces in quotes; the template encodes them.
 - `anchor`: optional stable HTML ID. Do not duplicate an ID on the same archive page.
 - `published: false`: hides a draft. Remove this line or set it to `true` when ready.
 
-Each resource has `label`, `url`, and an optional Font Awesome `icon`.
+Each resource has a `label` and a `url`; no icon or style configuration is needed.
 If the file/recording is not available, omit `url` and set `unavailable: true`.
 Never use an empty URL, `#`, or a directory as a download link.
 
@@ -63,21 +63,18 @@ in `_data/navigation.yml` when you add a project.
 
 CV entries use the `group` keys in `_data/cv_sections.yml`. Optional `date_display`
 and `subtitle` preserve the date and institution formatting. A `skills` list creates
-the existing skill badges. Body text is Markdown; the awards list uses the Kramdown
-attribute `{: .awards-list}`. Add section definitions in `_data/cv_sections.yml`.
+a simple skills list. Body text is ordinary Markdown, including the awards list. Add section definitions in `_data/cv_sections.yml`.
 
-Edit the homepage introduction in `index.md`, and the three homepage cards in
+Edit the homepage introduction in `index.md`, and the three homepage sections in
 `_about/`. Their titles are optional and ordering uses `order`.
 
 ## Profile and navigation
 
-Edit `_data/profile.yml` once to update the sidebar on every page. GitHub links to
-the verified repository owner. Unconfigured social profiles are shown as icons
-without bogus links; supply a real URL to enable them.
+Edit `_data/profile.yml` once to update the homepage profile and the shared footer. GitHub links to
+the verified repository owner. Social profiles appear as text links only when a real URL is supplied.
 
 Navigation is shared by every page. Toggle `enabled: true` for the prepared
-Publications, Research, or Projects links. This keeps the original four-link
-navigation until you choose to expand it.
+Publications or Projects links. Research is already enabled, and the site name links to the homepage.
 
 For literal bibliography labels at the beginning of a paragraph, write `\[1\]:`
 so Markdown does not treat them as hidden link definitions. Escape literal backticks

@@ -1,14 +1,11 @@
 ---
 layout: default
 ---
-<section class="publications-section">
-    <h2>{{ page.heading | escape }}</h2>
-    {{ content }}
-    {% for group in site.data.publication_sections %}
-    <div class="publication-category">
-        <h3>{{ group.title | escape }}</h3>
-        {% assign entries = site.publications | where: 'category', group.key | sort: 'order' %}
-        {% if entries.size > 0 %}<ul class="publication-list">{% for entry in entries %}{% include publication-card.html item=entry %}{% endfor %}</ul>{% else %}<p>No publications listed yet.</p>{% endif %}
-    </div>
-    {% endfor %}
+<header class="page-heading"><h1>{{ page.heading | escape }}</h1><div class="prose">{{ content }}</div></header>
+{% for group in site.data.publication_sections %}
+<section class="archive-section">
+  <h2 class="section-heading">{{ group.title | escape }}</h2>
+  {% assign entries = site.publications | where: 'category', group.key | sort: 'order' %}
+  {% for entry in entries %}{% include entry.html item=entry %}{% else %}<p class="section-intro">No publications listed yet.</p>{% endfor %}
 </section>
+{% endfor %}

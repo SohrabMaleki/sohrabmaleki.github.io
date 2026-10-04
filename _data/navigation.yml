@@ -1,6 +1,5 @@
 - label: Sohrab Maleki
   url: /index.html
-  class: name-item
   enabled: true
 - label: CV
   url: /cv.html
@@ -16,7 +15,7 @@
   enabled: false
 - label: Research
   url: /research.html
-  enabled: false
+  enabled: true
 - label: Projects
   url: /projects.html
   enabled: false

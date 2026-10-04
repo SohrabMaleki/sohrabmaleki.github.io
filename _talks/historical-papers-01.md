@@ -9,7 +9,6 @@ poster: /images/hp2-poster.jpg
 poster_alt: Historical Papers 01
 links:
 - label: Slides
-  icon: far fa-file-pdf
   url: /files/hp2-presentation.pdf
 date_display: 25 May 2025
 ---

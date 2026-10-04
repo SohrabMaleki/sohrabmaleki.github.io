@@ -1,5 +1,8 @@
 # Jekyll migration and verification report
 
+> Historical report for the initial migration. The subsequent redesign is described
+> in [redesign.md](redesign.md).
+
 Implemented on 4 October 2026 in `P:\MyWebPage\sohrabmaleki.github.io`.
 
 ## Result

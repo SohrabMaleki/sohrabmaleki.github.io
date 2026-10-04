@@ -9,10 +9,8 @@ poster: /images/kt8-poster.jpg
 poster_alt: Kinetic Theory 08
 links:
 - label: Notes
-  icon: far fa-file-alt
   url: /files/kt8.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/W8zB1rt_F8w
 date_display: 3 April 2025
 ---

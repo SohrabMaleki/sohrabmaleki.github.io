@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 4
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/AnalogBEC.pdf
 ---
 

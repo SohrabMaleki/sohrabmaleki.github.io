@@ -9,10 +9,8 @@ poster: /images/qt7-poster.jpg
 poster_alt: Quantum Theory 07
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/qt6.pdf
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 27 July 2025
 ---

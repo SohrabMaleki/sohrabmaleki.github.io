@@ -7,7 +7,6 @@ published: false
 links:
 - label: DOI
   url: https://doi.org/REPLACE_WITH_REAL_DOI
-  icon: fas fa-link
 ---
 
 *Journal name*, volume(issue), pages (year).

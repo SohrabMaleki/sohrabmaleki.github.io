@@ -9,10 +9,8 @@ poster: /images/qt3-poster.jpg
 poster_alt: Quantum Theory 01
 links:
 - label: Presentation
-  icon: far fa-file-pdf
   url: /files/qt3.pdf
 - label: Recording
-  icon: fas fa-video
   url: https://youtu.be/J_dpP2x3mwU
 date_display: 13 July 2025
 ---

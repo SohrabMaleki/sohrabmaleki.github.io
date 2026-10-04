@@ -1,24 +1,26 @@
 ---
 layout: default
 ---
-<section class="section">
-    <h2 class="section-header">{{ page.heading | escape }}</h2>
-    <div class="cv-download"><a href="{{ page.pdf | relative_url | replace: ' ', '%20' }}" class="btn download-btn"><i class="fas fa-download" aria-hidden="true"></i> Download CV (PDF)</a></div>
-    {{ content }}
-    {% for group in site.data.cv_sections %}
-    <div class="section">
-        <h3 class="subsection-header">{{ group.title | escape }}</h3>
-        {% assign entries = site.cv | where: 'group', group.key | sort: 'order' %}
-        {% for entry in entries %}
-        <div class="cv-item">
-            {% if entry.title and entry.title != empty %}<div class="cv-item-header"><span class="cv-item-title">{{ entry.title | escape }}</span>{% if entry.date_display %}<span class="cv-item-date">{{ entry.date_display | escape }}</span>{% endif %}</div>{% endif %}
-            {% if entry.subtitle %}<div class="cv-item-subtitle">{{ entry.subtitle | markdownify }}</div>{% endif %}
-            {% if entry.content != empty or entry.skills %}<div class="cv-item-description">
-                {% if entry.skills %}<div class="skills-grid">{% for skill in entry.skills %}<span class="skill-tag">{{ skill | escape }}</span>{% endfor %}</div>{% endif %}
-                {{ entry.content | markdownify }}
-            </div>{% endif %}
-        </div>
-        {% endfor %}
-    </div>
+<header class="page-heading">
+  <div class="page-heading-row">
+    <h1>{{ page.heading | escape }}</h1>
+    <a href="{{ page.pdf | relative_url | replace: ' ', '%20' }}" class="button">Download CV <span aria-hidden="true">&darr;</span></a>
+  </div>
+  <div class="prose">{{ content }}</div>
+</header>
+{% for group in site.data.cv_sections %}
+<section class="cv-section">
+  <h2>{{ group.title | escape }}</h2>
+  <div>
+    {% assign entries = site.cv | where: 'group', group.key | sort: 'order' %}
+    {% for entry in entries %}
+    <article class="cv-entry">
+      {% if entry.title and entry.title != empty %}<div class="cv-entry-header"><h3>{{ entry.title | escape }}</h3>{% if entry.date_display %}<span class="cv-date">{{ entry.date_display | escape }}</span>{% endif %}</div>{% endif %}
+      {% if entry.subtitle %}<div class="cv-subtitle">{{ entry.subtitle | markdownify }}</div>{% endif %}
+      {% if entry.skills %}<ul class="skills">{% for skill in entry.skills %}<li>{{ skill | escape }}</li>{% endfor %}</ul>{% endif %}
+      <div class="prose cv-body">{{ entry.content | markdownify }}</div>
+    </article>
     {% endfor %}
+  </div>
 </section>
+{% endfor %}

@@ -4,10 +4,8 @@ category: my-notes
 order: 1
 links:
 - label: PDF in English
-  icon: far fa-file-pdf
   url: /files/ContinuousSpectraConvergenceNote-Eng.pdf
 - label: PDF in Persian
-  icon: far fa-file-pdf
   url: /files/ContinuousSpectraConvergenceNote.pdf
 ---
 

@@ -1,0 +1,14 @@
+{% assign heading = include.heading | default: 'h3' %}
+<article class="entry{% if include.detail %} entry-detail{% endif %}" id="{{ include.item.anchor | default: include.item.slug | escape }}">
+  <div{% if include.item.poster %} class="entry-with-poster"{% endif %}>
+    <div>
+      <{{ heading }} class="entry-title">{% if include.detail %}{{ include.item.title | escape }}{% else %}<a href="{{ include.item.url | relative_url }}">{{ include.item.title | escape }}</a>{% endif %}</{{ heading }}>
+      {% if include.item.venue %}<p class="entry-meta">{{ include.item.venue | escape }}, {{ include.item.location | escape }}, {% if include.item.date_display %}{{ include.item.date_display | escape }}{% else %}{{ include.item.date | date: '%-d %B %Y' }}{% endif %}</p>{% endif %}
+      {% if include.item.authors %}<p class="entry-meta">{{ include.item.authors | escape }}</p>{% endif %}
+      <div class="prose">{{ include.item.content | markdownify }}</div>
+      {% include resource-links.html links=include.item.links %}
+      {% if include.item.after_links %}<div class="prose postscript">{{ include.item.after_links | markdownify }}</div>{% endif %}
+    </div>
+    {% include poster.html item=include.item %}
+  </div>
+</article>

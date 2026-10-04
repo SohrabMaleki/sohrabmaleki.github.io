@@ -4,10 +4,8 @@ category: my-insights
 order: 2
 links:
 - label: PDF in English
-  icon: far fa-file-pdf
   url: /files/ProbClassicalMech-Eng.pdf
 - label: PDF in Persian
-  icon: far fa-file-pdf
   url: /files/ProbClassicalMech-Fa.pdf
 ---
 

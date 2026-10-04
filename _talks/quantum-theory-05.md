@@ -9,10 +9,8 @@ poster: /images/qt5-poster.jpg
 poster_alt: Quantum Theory 05
 links:
 - label: Notes
-  icon: far fa-file-pdf
   url: /files/qt3.pdf
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 20 July 2025
 ---

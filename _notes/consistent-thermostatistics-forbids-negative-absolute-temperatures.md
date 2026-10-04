@@ -4,7 +4,6 @@ category: papers-i-ve-found-interesting
 order: 2
 links:
 - label: Paper PDF
-  icon: far fa-file-pdf
   url: /files/ConsistentThermostatistics.pdf
 ---
 

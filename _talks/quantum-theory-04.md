@@ -9,10 +9,8 @@ poster: /images/qt4-poster.jpg
 poster_alt: Quantum Theory 04
 links:
 - label: Notes
-  icon: far fa-file-pdf
   unavailable: true
 - label: Recording
-  icon: fas fa-video
   unavailable: true
 date_display: 16 July 2025
 ---

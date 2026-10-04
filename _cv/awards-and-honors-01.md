@@ -16,4 +16,3 @@ title: ''
 - **2019:** Golden Medal of Physics and Bronze Medal of Mathematics in 1st 10K contest, Tehran MathHome
 - **2019:** Silver Medal of Mathematics in The 21st National Mathematics Competition of IMC, Tehran MathHome
 - **2017:** Admitted in the High-school Entrance Examination, National Organization for Development of Exceptional Talents
-{: .awards-list}

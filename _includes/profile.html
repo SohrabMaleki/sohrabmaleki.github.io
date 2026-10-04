@@ -1,0 +1,14 @@
+<section class="profile" aria-label="About Sohrab">
+  <div>
+    <p class="eyebrow">{{ site.data.profile.role | escape }}</p>
+    <h1>{{ site.data.profile.name | escape }}</h1>
+    <p class="profile-affiliation">{{ site.data.profile.institution | escape }}</p>
+    <p class="profile-details">{{ site.data.profile.location | escape }} &middot; Born {{ site.data.profile.born | escape }}</p>
+    <div class="profile-links">
+      <a href="mailto:{{ site.data.profile.email | escape }}">Email</a>
+      {% for social in site.data.profile.social %}{% if social.url and social.url != empty %}<a href="{{ social.url | escape }}">{{ social.label | escape }}</a>{% endif %}{% endfor %}
+      <a href="{{ '/cv.html' | relative_url }}">Curriculum vitae</a>
+    </div>
+  </div>
+  <img class="portrait" src="{{ site.data.profile.portrait | relative_url }}" alt="{{ site.data.profile.name | escape }}" width="168" height="184">
+</section>

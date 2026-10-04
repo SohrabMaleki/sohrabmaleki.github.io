@@ -1,13 +1,13 @@
 {% if include.links.size > 0 %}
-<div class="{{ include.class | default: 'note-links' }}">
-    {% for resource in include.links %}
-    {% if resource.url and resource.url != empty %}
-        {% assign first_character = resource.url | slice: 0 %}
-        {% if first_character == '/' %}{% assign resource_url = resource.url | relative_url %}{% else %}{% assign resource_url = resource.url %}{% endif %}
-        <a href="{{ resource_url | replace: ' ', '%20' | escape }}"{% if include.class == 'link-group' %} class="link"{% endif %}><i class="{{ resource.icon | default: 'far fa-file-pdf' }}{% if include.class == 'link-group' %} link-icon{% endif %}" aria-hidden="true"></i> {{ resource.label | escape }}</a>
-    {% elsif resource.unavailable %}
-        <span class="resource-unavailable">{{ resource.label | escape }} (not yet available)</span>
-    {% endif %}
-    {% endfor %}
+<div class="resources" aria-label="Resources">
+  {% for resource in include.links %}
+  {% if resource.url and resource.url != empty %}
+    {% assign first_character = resource.url | slice: 0 %}
+    {% if first_character == '/' %}{% assign resource_url = resource.url | relative_url %}{% else %}{% assign resource_url = resource.url %}{% endif %}
+    <a href="{{ resource_url | replace: ' ', '%20' | escape }}">{{ resource.label | escape }}</a>
+  {% elsif resource.unavailable %}
+    <span class="resource-unavailable">{{ resource.label | escape }} (not yet available)</span>
+  {% endif %}
+  {% endfor %}
 </div>
 {% endif %}
