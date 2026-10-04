@@ -1,6 +1,6 @@
 ---
 title: General Relativity
-category: notes
+category: my-notes
 order: 1
 links:
 - label: English PDF
