@@ -1,6 +1,6 @@
 ---
 title: 'A Rapidly Expanding Bose-Einstein Condensate: An Expanding Universe in the Lab'
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 3
 links:
 - label: Paper PDF

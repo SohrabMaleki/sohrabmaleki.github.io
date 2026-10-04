@@ -1,6 +1,6 @@
 ---
 title: Experimental Black Hole Evaporation?
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 5
 links:
 - label: Paper PDF

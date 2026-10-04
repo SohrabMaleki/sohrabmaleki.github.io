@@ -1,6 +1,6 @@
 ---
 title: Consistent thermostatistics forbids negative absolute temperatures
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 2
 links:
 - label: Paper PDF

@@ -1,6 +1,6 @@
 ---
 title: From Probabilistic Mechanics to Quantum Theory | U. Klein, 2020
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 9
 links:
 - label: Paper PDF

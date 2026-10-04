@@ -1,6 +1,6 @@
 ---
 title: Violation of Boltzmann's H-Theorem in Real Gases | E. T. Jaynes, 1971
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 8
 links:
 - label: Paper PDF

@@ -1,6 +1,6 @@
 ---
 title: Information Theory and Statistical Mechanics | E. T. Jaynes, 1957
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 7
 links:
 - label: Paper PDF

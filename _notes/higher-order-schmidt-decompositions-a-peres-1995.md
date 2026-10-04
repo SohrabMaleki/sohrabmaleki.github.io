@@ -1,6 +1,6 @@
 ---
 title: Higher Order Schmidt Decompositions | A. Peres, 1995
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 6
 links:
 - label: Paper PDF

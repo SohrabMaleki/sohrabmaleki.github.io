@@ -1,6 +1,6 @@
 ---
 title: Analogue gravity from Bose–Einstein condensates
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 4
 links:
 - label: Paper PDF

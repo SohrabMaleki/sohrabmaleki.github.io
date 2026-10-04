@@ -1,6 +1,6 @@
 ---
 title: Quantum-Theoretical Re-Interpretation of Kinematic and Mechanical Relations | W. Heisenberg, 1925
-category: papers-i-ve-found-interesting
+category: cool-papers
 order: 10
 links:
 - label: Paper PDF
