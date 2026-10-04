@@ -1,6 +1,6 @@
 ---
 title: Analyzing Discreet Differences of Magnetic and Electric Dipoles
-category: my-insights
+category: little-topics
 order: 1
 links:
 - label: PDF

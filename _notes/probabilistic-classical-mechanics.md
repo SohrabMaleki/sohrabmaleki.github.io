@@ -1,6 +1,6 @@
 ---
 title: Probabilistic Classical Mechanics
-category: my-insights
+category: little-topics
 order: 2
 links:
 - label: PDF in English

@@ -1,10 +1,10 @@
 - key: my-notes
   title: My Notes
   collection: notes
-  description: This is my notes. things I've read elsewhere and I found cool or I've learned separately and thought that it would be great if I collect them in a single note. Anyways, they came up here somehow:D
-- key: my-insights
-  title: My Insights
-  collection: research
+  description: Here's my notes. These are my "DONE RIGHT" stuff, telling stories in a way I believe is right :))
+- key: little-topics
+  title: Little Topics
+  collection: notes
   description: This contains my "little researchs"; topics and problems that I had to think and spend time (usually some weeks and months) to get their answers!
 - key: cool-papers
   title: Cool Papers!

@@ -1,6 +1,6 @@
 ---
 title: From LvN to Schrodinger Equation
-category: my-insights
+category: little-topics
 order: 3
 links:
 - label: PDF
