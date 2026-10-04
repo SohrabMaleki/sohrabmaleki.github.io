@@ -1,0 +1,9 @@
+<div class="talk-with-poster" id="{{ include.item.anchor | default: include.item.slug | escape }}">
+    {% include poster.html item=include.item %}
+    <div class="talk-info">
+        <strong>{{ include.item.title | escape }}</strong>
+        <p class="talk-meta"><em>{{ include.item.venue | escape }}</em>, {{ include.item.location | escape }}, {% if include.item.date_display %}{{ include.item.date_display | escape }}{% else %}{{ include.item.date | date: '%-d %B %Y' }}{% endif %}</p>
+        <div class="entry-body">{{ include.item.content | markdownify }}</div>
+        {% include resource-links.html links=include.item.links class='link-group' %}
+    </div>
+</div>

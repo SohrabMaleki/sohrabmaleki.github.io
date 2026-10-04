@@ -1,0 +1,9 @@
+<header>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            {% for item in site.data.navigation %}{% if item.enabled %}
+            <li{% if item.class %} class="{{ item.class }}"{% endif %}><a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.url == '/' and item.url == '/index.html' %} aria-current="page"{% endif %}>{{ item.label | escape }}</a></li>
+            {% endif %}{% endfor %}
+        </ul>
+    </nav>
+</header>

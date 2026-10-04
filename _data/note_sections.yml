@@ -1,0 +1,12 @@
+- key: my-notes
+  title: My Notes
+  collection: notes
+  description: This is my notes. things I've read elsewhere and I found cool or I've learned separately and thought that it would be great if I collect them in a single note. Anyways, they came up here somehow:D
+- key: my-insights
+  title: My Insights
+  collection: research
+  description: This contains my "little researchs"; topics and problems that I had to think and spend time (usually some weeks and months) to get their answers!
+- key: papers-i-ve-found-interesting
+  title: Papers I've found interesting
+  collection: notes
+  description: Here, you can find the papers I've found interesting and sometimes my discussions about them. Also there are possible criticism (let's say confusions) about some of them.

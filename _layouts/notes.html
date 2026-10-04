@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="section">
+    <h2 class="section-header">{{ page.heading | escape }}</h2>
+    {{ content }}
+    {% for group in site.data.note_sections %}
+    <div class="section">
+        <h3 class="subsection-header">{{ group.title | escape }}</h3>
+        {{ group.description | markdownify }}
+        {% assign entries = site[group.collection] | where: 'category', group.key | sort: 'order' %}
+        {% for entry in entries %}{% include note-card.html item=entry %}{% endfor %}
+    </div>
+    {% endfor %}
+</section>

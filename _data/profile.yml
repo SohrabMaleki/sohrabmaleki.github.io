@@ -1,0 +1,20 @@
+name: Sohrab Maleki
+born: November 2004
+role: Physics Student
+institution: Sharif University of Technology
+email: SohrabMaleki04@gmail.com
+location: Tehran, Iran
+portrait: /images/portrait.png
+social:
+- label: GitHub
+  icon: fab fa-github
+  url: https://github.com/SohrabMaleki
+- label: LinkedIn
+  icon: fab fa-linkedin
+  url: ''
+- label: Google Scholar
+  icon: ai ai-google-scholar
+  url: ''
+- label: arXiv
+  icon: ai ai-arxiv
+  url: ''

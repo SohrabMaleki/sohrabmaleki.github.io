@@ -1,0 +1,25 @@
+name: Check Jekyll site
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Build with GitHub Pages dependencies
+        run: bundle exec jekyll build --strict_front_matter --trace
+        env:
+          JEKYLL_ENV: production
+      - name: Check case-sensitive links and assets
+        run: python3 scripts/check_site.py _site
+      - name: Build under a repository subpath
+        run: bundle exec jekyll build --baseurl /preview --destination _site_preview --strict_front_matter
+      - name: Check links with baseurl
+        run: python3 scripts/check_site.py _site_preview --baseurl /preview

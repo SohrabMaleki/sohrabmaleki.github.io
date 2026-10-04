@@ -1,0 +1,94 @@
+title: Sohrab Maleki
+description: Physics student at Sharif University of Technology — notes, talks, and research.
+url: https://sohrabmaleki.ir
+baseurl: ''
+timezone: Asia/Tehran
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+plugins:
+- jekyll-sitemap
+collections:
+  talks:
+    output: true
+    permalink: /talks/:name/
+  notes:
+    output: true
+    permalink: /notes/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  about:
+    output: false
+  cv:
+    output: false
+  talk_series:
+    output: false
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: default
+- scope:
+    path: ''
+    type: talks
+  values:
+    layout: entry
+    styles: []
+    lightbox: true
+- scope:
+    path: ''
+    type: notes
+  values:
+    layout: entry
+    styles:
+    - notes
+- scope:
+    path: ''
+    type: research
+  values:
+    layout: entry
+    styles:
+    - notes
+- scope:
+    path: ''
+    type: projects
+  values:
+    layout: entry
+    styles:
+    - notes
+- scope:
+    path: ''
+    type: publications
+  values:
+    layout: entry
+- scope:
+    path: ''
+    type: about
+  values:
+    title: ''
+- scope:
+    path: ''
+    type: cv
+  values:
+    title: ''
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- docs
+- scripts
+- work
+- outputs
+- vendor
+- node_modules
+- _site_preview
+future: true

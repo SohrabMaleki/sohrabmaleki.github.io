@@ -1,0 +1,22 @@
+- label: Sohrab Maleki
+  url: /index.html
+  class: name-item
+  enabled: true
+- label: CV
+  url: /cv.html
+  enabled: true
+- label: Notes
+  url: /notes.html
+  enabled: true
+- label: Talks
+  url: /talks.html
+  enabled: true
+- label: Publications
+  url: /publications.html
+  enabled: false
+- label: Research
+  url: /research.html
+  enabled: false
+- label: Projects
+  url: /projects.html
+  enabled: false

@@ -1,0 +1,20 @@
+<aside class="sidebar">
+    <div class="portrait-container">
+        <img src="{{ site.data.profile.portrait | relative_url }}" alt="{{ site.data.profile.name | escape }}" class="portrait" width="200" height="200">
+    </div>
+    <div class="personal-info">
+        <h1>{{ site.data.profile.name | escape }}</h1>
+        <p>Born: {{ site.data.profile.born | escape }}</p>
+        <p>{{ site.data.profile.role | escape }}</p>
+        <p>{{ site.data.profile.institution | escape }}</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ site.data.profile.email | escape }}">{{ site.data.profile.email | escape }}</a></p>
+            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ site.data.profile.location | escape }}</p>
+        </div>
+        <div class="social-links">
+            {% for social in site.data.profile.social %}
+            {% if social.url != empty %}<a href="{{ social.url | escape }}" aria-label="{{ social.label | escape }}"><i class="{{ social.icon }}" aria-hidden="true"></i></a>{% else %}<span class="unconfigured-social" title="{{ social.label | escape }} profile not configured"><i class="{{ social.icon }}" aria-hidden="true"></i></span>{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</aside>

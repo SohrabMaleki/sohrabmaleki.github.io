@@ -1,0 +1,6 @@
+<li id="{{ include.item.anchor | default: include.item.slug | escape }}">
+    <strong>{{ include.item.title | escape }}</strong>
+    {% if include.item.authors %}<p>{{ include.item.authors | escape }}</p>{% endif %}
+    <div class="entry-body">{{ include.item.content | markdownify }}</div>
+    {% include resource-links.html links=include.item.links class='publication-links' %}
+</li>

@@ -1,0 +1,5 @@
+{% if include.item.poster %}
+<a class="talk-poster" href="{{ include.item.poster | relative_url }}" data-poster aria-label="Enlarge {{ include.item.poster_alt | default: include.item.title | escape }} poster">
+    <img src="{{ include.item.poster | relative_url }}" alt="{{ include.item.poster_alt | default: include.item.title | escape }}" loading="lazy">
+</a>
+{% endif %}

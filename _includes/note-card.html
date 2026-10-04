@@ -1,0 +1,6 @@
+<div class="note-item" id="{{ include.item.anchor | default: include.item.slug | escape }}">
+    <strong>{{ include.item.title | escape }}</strong>
+    <div class="entry-body">{{ include.item.content | markdownify }}</div>
+    {% include resource-links.html links=include.item.links %}
+    {% if include.item.after_links %}{{ include.item.after_links | markdownify }}{% endif %}
+</div>

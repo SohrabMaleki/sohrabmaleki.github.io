@@ -640,3 +640,37 @@ footer {
         margin-top: 0.3rem;
     }
 }
+
+/* Markdown rendering and accessibility; original desktop geometry is retained. */
+.content, .talk-info { min-width: 0; }
+.note-item .entry-body p { margin-bottom: 0.8rem; }
+.home-intro p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; }
+.resource-unavailable { color: var(--text-light); font-size: 0.9rem; }
+.talk-meta + .entry-body { margin-top: 1.5em; }
+.series-spacer { margin-top: 1.5em; }
+.talk-poster { cursor: pointer; }
+.talk-poster:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--secondary-color); outline-offset: 4px; }
+.contact-info a { color: inherit; }
+.social-links .unconfigured-social { color: var(--text-light); font-size: 1.2rem; }
+.social-links .unconfigured-social i { opacity: 0.75; }
+.skip-link { position: fixed; top: -100px; left: 1rem; padding: 0.5rem 1rem; background: white; z-index: 2000; }
+.skip-link:focus { top: 0.5rem; }
+[id] { scroll-margin-top: 5rem; }
+.lightbox[hidden] { display: none; }
+.lightbox:not([hidden]) { display: flex; }
+.close-lightbox { border: 0; background: transparent; line-height: 1; }
+.publication-links, .link-group { flex-wrap: wrap; }
+.cv-item-subtitle p { margin: 0; }
+.cv-item .awards-list, .cv-item .list { padding-left: 0; }
+.cv-item .entry-body ul { padding-left: 1.2rem; }
+.main-nav a[aria-current="page"]::after { width: 100%; }
+@media (max-width: 768px) {
+    .content { padding: 1.5rem; overflow-wrap: anywhere; }
+    .contact-info a { overflow-wrap: anywhere; }
+    .talk-info { width: 100%; }
+    .note-links { flex-wrap: wrap; }
+    .cv-item .skills-grid { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
